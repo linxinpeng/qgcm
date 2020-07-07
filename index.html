@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container">
+
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/layui/layui.js"></script>
+    <script>
+        $(function(){
+            //加载头部
+            $('#page-header').load('./layout/header.html')
+            //加载底部
+            $('#page-footer').load('./layout/footer.html')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<div class="page-header">
+    <div class="header-inner">
+        <div class="header-inner--logo">
+            <img src="images/header-logo.png" />
+        </div>
+        <div class="header-inner--nav"></div>
+        <div class="header-inner--admin">
+            <div class="header-inner--admin--unlogin">
+                <img src="images/user.png" />
+                <span id="login">登录</span>
+                <span id="register">注册</span>
+            </div>
+            <div class="header-inner--admin--unvip is-none">
+                <img src="images/update-user.png" style="margin-right: 4px;"/>
+                <img src="images/ben.png" />
+                <div class="header-inner--admin--pop">
+                    <div class="admin--pop--head admin-active">
+                        <h3>153****3648</h3>
+                        <p class="update-vip">升级会员></p>
+                        <p class="admin-vip">豪华商业版会员</p>
+                    </div>
+                    <ul>
+                        <li>个人资料</li>
+                        <li>公司入驻</li>
+                        <li>我的发布</li>
+                        <li>匹配合作</li>
+                        <li>合作历史</li>
+                        <li>消息中心<span class="layui-badge" style="border-radius: 10px;padding: 0 8px;">29</span></li>
+                        <li>关键词订阅</li>
+                        <li>退出登录</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        layui.use('layer', function () {
+            var layer = layui.layer;
+            //导航栏数据
+            const nav = [
+                {
+                    name: '首页',
+                    url: 'index.html'
+                },
+                {
+                    name: '发布需求',
+                    url: 'push.html'
+                },
+                {
+                    name: '合作企业',
+                    url: '#'
+                },
+                {
+                    name: '会员特权',
+                    url: '#',
+                    icon: 'images/vip.png'
+                },
+                {
+                    name: '关于我们',
+                    url: '#'
+                },
+                {
+                    name: '知识付费',
+                    url: '#'
+                },
+                {
+                    name: '帮助中心',
+                    url: '#'
+                }
+            ]
+            //获取地址参数
+            const pathname = window.location.pathname;
+            //遍历数组渲染html
+            ; (function () {
+                const el = $('.header-inner--nav');
+                let html = nav.map(item => {
+                    return `
+                <div class="header-inner--item ${pathname.includes(item.url) ? 'nav-active' : ''}">
+                    <a class="${item.icon ? 'colorYellow' : ''}" href="${item.url}">
+                        ${item.icon ? `<img style="width: 20px" src="${item.icon}" />` : ''}
+                        ${item.name}
+                    </a>
+                </div>
+                `
+                })
+                el.empty().append(html)
+            })()
+            //鼠标hover事件
+            $('.header-inner--admin--unvip').hover(function () {
+                $(this).children('.header-inner--admin--pop').stop().slideDown();
+            }, function () {
+                $(this).children('.header-inner--admin--pop').stop().slideUp();
+            })
+            //登录点击事件
+            $('#login').click(function () {
+                $(this).parent('.header-inner--admin--unlogin').addClass('is-none');
+                $('.header-inner--admin--unvip', '.header-inner--admin').removeClass('is-none')
+            })
+            //注册事件
+            $('#register').click(function () {
+                layer.msg('hello');
+            })
+        });
+
+    })
+</script>
+<style>
+    @import url(css/layout.css);
+</style>
