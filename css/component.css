@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html {
+  height: 100%;
+}
+.head--close {
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.head--close:hover {
+  opacity: 1;
+}
+.phone-dialog {
+  padding: 15px 20px 0 20px;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.phone-dialog--close {
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.phone-dialog--close img {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.phone-dialog--close img:hover {
+  opacity: 1;
+}
+.phone-dialog--logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone-dialog--inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.phone-dialog--inputs .phone-dialog--item {
+  width: 300px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.3s;
+}
+.phone-dialog--inputs .phone-dialog--item .layui-input-reset {
+  height: 100%;
+  border: none;
+}
+.phone-dialog--inputs .phone-dialog--item .send-vrcode {
+  font-size: 14px;
+  color: #3bb79c;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid;
+  cursor: pointer;
+}
+.phone-dialog--inputs .phone-dialog--item--btn {
+  margin-top: 2px;
+}
+.phone-dialog--inputs .is-focus {
+  border: 1px solid #1bbc9c;
+}
+.phone-dialog--inputs .layui-unselect {
+  width: 68px;
+  border: none;
+  padding-left: 4px;
+  box-sizing: border-box;
+}
+.phone-dialog--inputs .layui-btn-reset {
+  width: 100%;
+  background: #1bbc9c;
+  border-radius: 4px;
+}
+.phone-dialog--footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+  background: #f8f9fc;
+  border-radius: 0px 0px 11px 11px;
+  justify-content: center;
+}
+.phone-dialog--footer label {
+  color: #AAAAAA;
+  font-size: 14px;
+}
+.phone-dialog--footer span {
+  padding-left: 4px;
+  color: #333333;
+  font-size: 14px;
+  cursor: pointer;
+}
+.phone-dialog--footer a {
+  color: #3BB79C;
+}
+.phone-dialog--footer-left {
+  margin-right: 33px;
+}
+.login {
+  padding: 15px 20px 0 20px;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 11px;
+}
+.login--title {
+  display: flex;
+  justify-content: center;
+}
+.login .input-meno {
+  width: 85px;
+  text-align: center;
+  color: #333333;
+}
+.login .login-forget {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  width: 300px;
+  text-align: right;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+}
+.login .login-tip {
+  font-size: 14px;
+  color: #999999;
+  text-align: center;
+}
+.login .login-tip span {
+  position: relative;
+}
+.login .login-tip span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 46px;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 110%;
+  background-color: #DDDDDD;
+}
+.login .login-tip span::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 46px;
+  height: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 110%;
+  background-color: #DDDDDD;
+}
+.login .login-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+.login .login-icon span {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #F6F7F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.login .login-icon span img {
+  width: 28px;
+}
+.login .login-wechat .wechat-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 21px;
+}
+.login .login-wechat .wechat-title p {
+  padding-left: 4px;
+  font-size: 14px;
+  color: #666666;
+}
+.login .login-wechat .wechat-qrcode {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+.login .login-wechat .wechat-qrcode img {
+  width: 200px;
+  height: 200px;
+}

@@ -7,11 +7,45 @@
 .is-none{
     display: none !important;
 }
+.w200{
+    width: 200px;
+}
+.f1{
+    flex: 1;
+}
+.w250{
+    width: 250px;
+}
+.w370{
+    width: 370px;
+}
 //导航栏样式
-.page-header{
-    height:80px;
+div.other-style{
     background:rgba(255,255,255,1);
     box-shadow:0px 12px 10px 0px rgba(0,0,0,0.05);
+    .header-inner{
+        &--nav{
+            .header-inner--item{
+                a{
+                    color: #333333 ;
+                }
+            }
+    }
+    &--admin--unlogin{
+        span{
+            color: #333333;
+        }
+        span#login{
+            &::after{
+                background-color: #333;
+            }
+        }
+    }
+
+}
+}
+.page-header{
+    height:80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -19,9 +53,10 @@
     z-index: 2;
     font-size: @fontSize;
     font-family: @fontFam;
+    transition: all .3s;
     .header-inner{
         width: 1200px;
-        height: 100%;
+        height: calc(100% - 3px);
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -42,6 +77,10 @@
                     height: 100%;
                     display: flex;
                     align-items: center;
+                    color: #FFFFFF;
+                    img{
+                        margin-right: 4px;
+                    }
                 }
             }
             .header-inner--item:hover{
@@ -70,7 +109,7 @@
                 }
                 span{
                     font-size:16px;
-                    color:rgba(51,51,51,1);
+                    color: #FFFFFF;
                     text-shadow:0px 12px 10px rgba(0,0,0,0.05);
                     position: relative;
                     cursor: pointer;
@@ -87,7 +126,7 @@
                         right: 0;
                         width: 1px;
                         height: 14px;
-                        background-color: #333;
+                        background-color: #FFFFFF;
                     }
                 }
                 span#register{
@@ -294,7 +333,76 @@
 //页面容器样式
 .page-container{
     width: 100%;
-    padding-top: 80px;
     min-height: calc(100vh - 380px);
     box-sizing: border-box;
+    .page-banner{
+        height: 680px;
+        background-image: url(../images/banner.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1{
+            font-size:52px;
+            font-weight:500;
+            color:rgba(255,255,255,1);
+            line-height:73px;
+            letter-spacing:2px;
+        }
+        &--line{
+            width:50px;
+            height:6px;
+            background:rgba(45,211,190,1);
+            border-radius:6px;
+            margin-bottom: 20px;
+        }
+        p{
+            font-size:16px;
+            color:rgba(255,255,255,1);
+            line-height:26px;
+            letter-spacing:1px;
+        }
+        &-btns{
+            margin-top: 126px;
+            display: flex;
+            .first-party{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width:575px;
+                height:135px;
+                background:linear-gradient(230deg,rgba(35,240,182,1) 0%,rgba(2,164,161,1) 100%);
+                border-radius:14px;
+                margin-right: 50px;
+                cursor: pointer;
+            }
+            .second-party{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width:575px;
+                height:135px;
+                background:linear-gradient(53deg,rgba(134,93,244,1) 0%,rgba(170,112,235,1) 100%);
+                border-radius:14px;
+                cursor: pointer;
+            }
+            h2{
+                font-size:36px;
+                font-weight:500;
+                color:rgba(255,255,255,1);
+                line-height:50px;
+                letter-spacing:1px;
+            }
+            span{
+                font-size:14px;
+                color:rgba(255,255,255,1);
+                line-height:20px;
+                letter-spacing:1px;
+            }
+        }
+    }
 }

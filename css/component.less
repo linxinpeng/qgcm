@@ -1,0 +1,218 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+html{
+    height: 100%
+}
+.head--close{
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+    }
+}
+.phone-dialog{
+    padding: 15px 20px 0 20px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    &--close{
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        img{
+            cursor: pointer;
+            opacity: 0.5;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    &--logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &--inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        .phone-dialog--item{
+            width:300px;
+            height:40px;
+            border-radius:4px;
+            border:1px solid rgba(221,221,221,1);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            transition: border-color .3s;
+            .layui-input-reset{
+                height: 100%;
+                border: none;
+            }
+            .send-vrcode{
+                font-size:14px;
+                color:rgba(59,183,156,1);
+                width: 150px;
+                display: flex;
+                justify-content: center;
+                border-left: 1px solid;
+                cursor: pointer;
+            }
+            &--btn{
+                margin-top: 2px;
+            }
+        }
+        .is-focus{
+            border:1px solid rgba(27,188,156,1);
+        }
+        .layui-unselect{
+            width: 68px;
+            border: none;
+            padding-left: 4px;
+            box-sizing: border-box;
+        }
+        .layui-btn-reset{
+            width: 100%;
+            background:rgba(27,188,156,1);
+            border-radius:4px;
+        }
+
+    }
+    &--footer{
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        width:400px;
+        height:50px;
+        background:rgba(248,249,252,1);
+        border-radius:0px 0px 11px 11px;
+        justify-content: center;
+        label{
+            color: #AAAAAA;
+            font-size: 14px;
+        }
+        span{
+            padding-left: 4px;
+            color: #333333;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        a{
+            color: #3BB79C;
+        }
+        &-left{
+            margin-right: 33px;
+        }
+    }
+}
+//登录弹窗样式
+.login{
+    padding: 15px 20px 0 20px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius:11px;
+    &--title{
+        display: flex;
+        justify-content: center;
+    }
+    .input-meno{
+        width: 85px;
+        text-align: center;
+        color: #333333;
+    }
+    .login-forget{
+        margin-top: -10px;
+        margin-bottom: 10px;
+        width:300px;  
+        text-align: right;  
+        font-size:14px;
+        color:rgba(51,51,51,1);
+        cursor: pointer;
+    }
+    .login-tip{
+        font-size:14px;
+        color:rgba(153,153,153,1);
+        
+        text-align: center;
+        span{
+            position: relative;
+            &::before{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width:46px;
+                height:1px;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 110%;
+                background-color: #DDDDDD;
+            }
+            &::after{
+                content: "";
+                display: inline-block;
+                position: absolute;
+                width:46px;
+                height:1px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 110%;
+                background-color: #DDDDDD;
+            }
+        }
+        
+    }
+    .login-icon{
+        display: flex;
+        justify-content: center;
+        margin-top: 14px;
+        span{
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #F6F7F9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            img{
+                width: 28px;
+            }
+        }
+    }
+    .login-wechat{
+        .wechat-title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 21px;
+            p{
+                padding-left: 4px;
+                font-size:14px;
+                color:rgba(102,102,102,1);
+            }
+        }
+        .wechat-qrcode{
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            margin-bottom: 24px;
+            img{
+                width:200px;
+                height:200px;
+            }
+        }
+    }
+}

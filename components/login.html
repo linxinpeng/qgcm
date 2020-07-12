@@ -1,0 +1,110 @@
+<div class="login phone-dialog">
+    <div class="head--close">
+        <img src="../images/close.png" />
+    </div>
+    <div class="login--title">
+        <img src="../images/header-logo.png" />
+    </div>
+    <div class="login-phone">
+        <div class="phone-dialog--inputs">
+            <form class="layui-form" action="">
+                <div class="phone-dialog--item">
+                    <select name="phone" lay-verify="" style="border: none;">
+                        <option value="86">+86</option>
+                        <option value="010">+010</option>
+                    </select>
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输手机号码"
+                        autocomplete="off" class="layui-input layui-input-reset">
+                </div>
+                <div class="phone-dialog--item">
+                    <span class="input-meno">密码</span>
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入密码"
+                        autocomplete="off" class="layui-input layui-input-reset">
+                </div>
+                <p class="login-forget">忘记密码?</p>
+                <div class="phone-dialog--btn">
+                    <button type="button" class="layui-btn layui-btn-lg layui-btn-reset">登录</button>
+                </div>
+            </form>
+        </div>
+        <div class="login-tip" style="margin-top: 48px;">
+            <span>微信扫码登录</span>
+        </div>
+        <div class="login-icon">
+            <span class="ic" data-hide="login-phone" data-show="login-wechat">
+                <img src="../images/wechat.png" />
+            </span>
+        </div>
+    </div>
+    <div class="login-wechat" style="display: none;">
+        <div class="wechat-title">
+            <img src="../images/wechat.png" />
+            <p>微信一键登录更加快捷</p>
+        </div>
+        <div class="wechat-qrcode">
+            <img src="../images/qrcode.png" />
+        </div>
+        <div class="login-tip">
+            <span>手机号登录</span>
+        </div>
+        <div class="login-icon">
+            <span class="ic" data-hide="login-wechat" data-show="login-phone">
+                <img src="../images/phone.png" />
+            </span>
+        </div>
+    </div>
+    <div class="phone-dialog--footer">
+        <div class="phone-dialog--footer-left">
+            <label>登录即同意</label>
+            <span>用户协议</span>
+        </div>
+        <div class="phone-dialog--footer-right">
+            <a href="#">手机号注册 ></a>
+        </div>
+    </div>
+</div>
+<script src="../js/lib/jquery.min.js"></script>
+<script src="../js/lib/layui/layui.js"></script>
+<script>
+    $(function () {
+        layui.use(["form", "table", 'layer'], function () {
+            //转换登录模式
+            $('.ic', '.login-icon').on('click', function () {
+                let show = $(this).data('show');
+                let hide = $(this).data('hide');
+                $(`.${show}`).show();
+                $(`.${hide}`).hide()
+            })
+
+            //获取所有的input框
+            $('input').on('focus', function () {
+                //获取父容器
+                $(this).parent('.phone-dialog--item').addClass('is-focus')
+            }).on('blur', function () {
+                $(this).parent('.phone-dialog--item').removeClass('is-focus')
+            })
+        })
+
+        //关闭弹窗
+        $('.head--close').click(function () {
+            var index = parent.layer.getFrameIndex(window.name)
+            parent.layer.close(index)
+        })
+
+        //忘记密码
+        $('.login-forget').click(function () {
+            window.forget = parent.layer.open({
+                type: 2,
+                skin: 'phone-dialog-cs',
+                area: ['400px', '530px'],
+                title: '',
+                closeBtn: 0,
+                content: 'components/forget.html'
+            });
+        })
+    })
+</script>
+<style>
+    @import url(../js/lib/layui/css/layui.css);
+    @import url(../css/component.css);
+</style>

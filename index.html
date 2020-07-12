@@ -14,7 +14,23 @@
     <div id="page-header"></div>
     <!-- 页面容器元素 -->
     <div class="page-container">
-
+        <div class="page-banner">
+            <h1>让商务对接更简单</h1>
+            <div class="page-banner--line"></div>
+            <p>青瓜传媒 拥有垂直核心技术、百万资源、行业专业技术和服务能力</p>
+            <p>拥有垂直核心技术、百万资源、</p>
+            <div class="page-banner-btns">
+                <div class="first-party">
+                    <h2>甲方需求</h2>
+                    <span>代运营 MAC机构 KOL</span>
+                </div>
+                <div class="second-party">
+                    <h2>乙方服务</h2>
+                    <span>生活服务 居家建材 企业服务 工业制造 广告传媒</span>
+                </div>
+            </div>
+        </div>
+        <div id="search-box"></div>
     </div>
     <!-- 页面底部 -->
     <div id="page-footer"></div>
@@ -22,10 +38,12 @@
     <script src="./js/lib/layui/layui.js"></script>
     <script>
         $(function(){
+            //加载搜索列表
+            $('#search-box').load('components/search-list.html')
             //加载头部
-            $('#page-header').load('./layout/header.html')
+            $('#page-header').load('layout/header.html')
             //加载底部
-            $('#page-footer').load('./layout/footer.html')
+            $('#page-footer').load('layout/footer.html')
         })
     </script>
 </body>

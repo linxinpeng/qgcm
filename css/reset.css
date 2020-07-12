@@ -18,3 +18,40 @@ del,ins,u,s,a,a:hover{text-decoration:none;}
 body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
 body{background:#fff;}
 a,a:hover{color:#333;}
+#search-page .layui-laypage .layui-laypage-curr{
+    width:32px;
+    height:32px;
+    border-radius:6px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    overflow: hidden;
+}
+#search-page .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background-color: #21CAA8;
+    border: none;
+}
+#search-page .layui-laypage .layui-laypage-spr{
+    border: none;
+}
+#search-page .layui-laypage a{
+    width:32px;
+    height:32px;
+    background:rgba(255,255,255,1);
+    border-radius:6px;
+    border:1px solid rgba(221,221,221,1);
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+#search-page .layui-laypage input:focus{
+    border-color: #21CAA8 !important;
+}
+
+.phone-dialog-cs{
+    border-radius:11px !important;
+}

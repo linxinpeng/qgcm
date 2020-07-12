@@ -11,7 +11,7 @@
                 <span id="register">注册</span>
             </div>
             <div class="header-inner--admin--unvip is-none">
-                <img src="images/update-user.png" style="margin-right: 4px;"/>
+                <img src="images/update-user.png" style="margin-right: 4px;" />
                 <img src="images/ben.png" />
                 <div class="header-inner--admin--pop">
                     <div class="admin--pop--head admin-active">
@@ -87,6 +87,16 @@
                 })
                 el.empty().append(html)
             })()
+            //滚动条事件
+            $(window).scroll(function (event) {
+                var winPos = $(window).scrollTop()
+                if(winPos >= 600){
+                    $('.page-header').addClass('other-style')
+                }else{
+                    $('.page-header').removeClass('other-style')
+                }
+            });
+
             //鼠标hover事件
             $('.header-inner--admin--unvip').hover(function () {
                 $(this).children('.header-inner--admin--pop').stop().slideDown();
@@ -95,12 +105,29 @@
             })
             //登录点击事件
             $('#login').click(function () {
-                $(this).parent('.header-inner--admin--unlogin').addClass('is-none');
-                $('.header-inner--admin--unvip', '.header-inner--admin').removeClass('is-none')
+                //会员登录 样式状态改变
+                // $(this).parent('.header-inner--admin--unlogin').addClass('is-none');
+                // $('.header-inner--admin--unvip', '.header-inner--admin').removeClass('is-none')
+
+                window.name = layer.open({
+                    type: 2,
+                    skin: 'phone-dialog-cs',
+                    area: ['400px', '530px'],
+                    title: '',
+                    closeBtn: 0,
+                    content: 'components/login.html'
+                });
             })
-            //注册事件
+            //注册事件 弹窗
             $('#register').click(function () {
-                layer.msg('hello');
+                window.name = layer.open({
+                    type: 2,
+                    skin: 'phone-dialog-cs',
+                    area: ['400px', '530px'],
+                    title: '',
+                    closeBtn: 0,
+                    content: 'components/PhoneDialog.html'
+                });
             })
         });
 
