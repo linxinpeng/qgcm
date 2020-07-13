@@ -88,14 +88,20 @@
                 el.empty().append(html)
             })()
             //滚动条事件
-            $(window).scroll(function (event) {
-                var winPos = $(window).scrollTop()
-                if(winPos >= 600){
-                    $('.page-header').addClass('other-style')
-                }else{
-                    $('.page-header').removeClass('other-style')
-                }
-            });
+            let routeName = window.location.pathname;
+            if (routeName.includes('index')) {
+                $(window).on('scroll', function () {
+                    var winPos = $(window).scrollTop()
+                    if (winPos >= 600) {
+                        $('.page-header').addClass('other-style')
+                    } else {
+                        $('.page-header').removeClass('other-style')
+                    }
+                })
+            }else{
+                $(window).unbind('scroll')
+                $('.page-header').addClass('other-style')
+            }
 
             //鼠标hover事件
             $('.header-inner--admin--unvip').hover(function () {

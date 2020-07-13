@@ -1,6 +1,8 @@
+.different-bg .search-list__header {
+  background: #f8f9fc;
+}
 .search-list__header {
   height: 180px;
-  background: #f8f9fc;
   padding: 42px 0;
   box-sizing: border-box;
 }

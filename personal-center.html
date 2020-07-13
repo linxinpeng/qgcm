@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/other.css">
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container" style="padding-top: 80px;">
+        <div class="page-flex">
+            <div class="page-nav">
+                <ul>
+                    <li>
+                        <div class="nav-title nav-item nav-more">
+                            <img src="images/personal.png" />
+                            <span>个人中心</span>
+                            <img class="nav-arrow-up nav-arrow-down" src="images/up.png" />
+                        </div>
+                        <div class="nav-cont">
+                            <span class="nav-item nav-item-active" data-target="grzl">个人资料</span>
+                            <span class="nav-item" data-target="aqsz">安全设置</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="gsrz">
+                            <img src="images/personal.png" />
+                            <span>公司入驻</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="fbxq">
+                            <img src="images/personal.png" />
+                            <span>发布需求</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="wdfb">
+                            <img src="images/personal.png" />
+                            <span>我的发布</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="pphz">
+                            <img src="images/personal.png" />
+                            <span>匹配合作</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="hzls">
+                            <img src="images/personal.png" />
+                            <span>合作历史</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="xxzx">
+                            <img src="images/personal.png" />
+                            <span>消息中心</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="gjcdy">
+                            <img src="images/personal.png" />
+                            <span>关键词订阅</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-cont">
+                <div id="grzl" class="page-cont-none is-block">
+                    个人资料
+                </div>
+                <div id="aqsz" class="page-cont-none">安全设置</div>
+                <div id="gsrz" class="page-cont-none">公司入住</div>
+                <div id="fbxq" class="page-cont-none">发布需求</div>
+                <div id="wdfb" class="page-cont-none">我的发布</div>
+                <div id="pphz" class="page-cont-none">匹配合作</div>
+                <div id="hzls" class="page-cont-none">合作历史</div>
+                <div id="xxzx" class="page-cont-none">消息中心</div>
+                <div id="gjcdy" class="page-cont-none">关键词定义</div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/layui/layui.js"></script>
+    <script>
+        $(function () {
+            //定义当前nav点击项
+            let currentTarget = 'grzl';
+            //左侧导航栏点击事件
+            $('.nav-item', '.page-nav').on('click', function () {
+                let title = $(this).data('target')
+                if (!title || currentTarget === title) return;
+                currentTarget = title;
+                setNavStyle.call(this)
+                $(`#${currentTarget}`).addClass('is-block').siblings().removeClass('is-block')
+            })
+
+            //缩放按钮
+            $('.nav-more', '.page-nav').on('click', function () {
+                let el = $(this).next('.nav-cont')
+                el.slideToggle();
+                $(this).children('.nav-arrow-up').toggleClass('nav-arrow-down')
+            })
+
+            //设置样式
+            function setNavStyle() {
+                //移除所有激活状态
+                $('.nav-item-active').removeClass('nav-item-active')
+                //给当前添加激活状态
+                $(this).addClass('nav-item-active')
+            }
+
+            //加载搜索列表
+            $('#search-box').load('components/search-list.html')
+            //加载头部
+            $('#page-header').load('layout/header.html')
+            //加载底部
+            $('#page-footer').load('layout/footer.html')
+        })
+    </script>
+</body>
+
+</html>

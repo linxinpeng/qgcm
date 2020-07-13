@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/other.css">
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container" style="padding-top: 80px;">
+        <div class="release-tabs">
+            <div class="release-tabs-header">
+                <span class="tab-active">找合作</span>
+                <span>找公司</span>
+            </div>
+            <div class="release-tabs-cont">
+                <div class="release-cont-item">
+                    <label>结算方式</label>
+                    <div class="release-options" id="settlement"></div>
+                </div>
+                <div class="release-cont-item">
+                    <label>合作类型</label>
+                    <div class="release-options" id="cooperation"></div>
+                </div>
+                <div class="release-cont-item">
+                    <label>所属行业</label>
+                    <div class="release-options" id="belong"></div>
+                </div>
+                <div class="release-cont-item">
+                    <label>合作地区</label>
+                    <div class="release-options" id="addrs"></div>
+                    <div class="address-options layui-form" lay-filter="myDiv">
+                        <select name="" id="" lay-filter="mySelect">
+                            <option value="zhang">张先生</option>
+                            <option value="wang">王先生</option>
+                            <option value="li">李先生</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="search-box"></div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/layui/layui.js"></script>
+    <script src="data/data.js"></script>
+    <script>
+        $(function () {
+            layui.use(['laypage', 'layer','form'], function () {
+                var laypage = layui.laypage
+                    , layer = layui.layer;
+                //存储当前的赛选项
+                let filters = []
+                //初始化页面DOM
+                initHtml('#settlement', data.settlement)
+                initHtml('#cooperation', data.cooperation)
+                initHtml('#belong', data.belong)
+                initHtml('#addrs', data.addrs.less)
+                //渲染下拉框选项
+                ;(function(){
+                    const el = $('select');
+                    let html = data.addrs.more.map(v =>{
+                        return `<option value="${v}">${v}</option>`
+                    })
+                    el.empty().append(html)
+                    layui.form.render('select','myDiv');
+                })()
+                //渲染html
+                function initHtml(el, dataAry) {
+                    let html = dataAry.map(v => {
+                        return `
+                        <span>${v}</span>
+                    `
+                    })
+                    $(el).empty().append(html)
+                }
+                //tab切换事件
+                $('span','.release-tabs-header').on('click',function(){
+                    $(this).addClass('tab-active').siblings().removeClass('tab-active');
+                })
+                //tag点击事件
+                $('span','.release-options').on('click',function(){
+                    let option = $(this).text();
+                    $(this).toggleClass('tag-active');
+                    //存储当前筛选项
+                    if(filters.includes(option)){
+                        filters.splice(filters.indexOf(option),1)
+                        return
+                    }
+                    filters.push(option)
+                })
+                //加载搜索列表
+                $('#search-box').load('components/search-list.html')
+                //加载头部
+                $('#page-header').load('layout/header.html')
+                //加载底部
+                $('#page-footer').load('layout/footer.html')
+            })
+        })
+    </script>
+</body>
+
+</html>
