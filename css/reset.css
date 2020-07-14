@@ -59,3 +59,26 @@ a,a:hover{color:#333;}
 .layui-form-select dl dd.layui-this{
     background-color: #21CAA8 !important;
 }
+.personal-data .layui-tab-title li{
+    font-size:16px;
+    font-weight:500;
+    color: #666666;
+    line-height: 46px;
+}
+.personal-data .layui-tab-title .layui-this:after{
+    width: 70% !important;
+    transform: translateX(22%);
+    height: 46px;
+}
+.personal-data .layui-tab-title{
+    height: 46px;
+}
+.personal-data .layui-form-label{
+    text-align: left;
+    font-size:14px;
+    font-weight:500;
+    color:rgba(51,51,51,1);
+}
+.personal-data .layui-form-item{
+    margin-bottom: 24px;
+}

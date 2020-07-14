@@ -1,0 +1,248 @@
+<div class="personal-data">
+    <div class="personal-data--info">
+        <div class="personal-data--info__left">
+            <div class="personal-data--info--img">
+                <img src="../images/user.jpg" />
+            </div>
+            <div class="personal-data--info--name">
+                <div class="personal-data--name-head">
+                    <h3>Hi！默默鱼</h3>
+                    <img src="../images/verson.png" />
+                </div>
+                <p>今天是你陪伴青瓜传媒的第</br><span>30</span>天</p>
+            </div>
+        </div>
+        <div class="personal-data--info__right">
+            <div class="personal-data--info-other">
+                <div>
+                    <img src="../images/phone-number.png" />
+                    1593***2455
+                </div>
+                <div>
+                    <img src="../images/house.png" />
+                    厦门青瓜传媒信息科技有限公司
+                </div>
+                <div>
+                    <img src="../images/cc-card.png" />
+                    商务部 总监
+                </div>
+            </div>
+            <div class="personal-data--info-card">
+                <img src="../images/qrcode2.png" />
+                <p>扫一扫分享合作名片</p>
+            </div>
+        </div>
+    </div>
+    <div class="personal-data-content">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li class="layui-this">个人中心</li>
+                <li>安全设置</li>
+            </ul>
+            <div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">结算方式</label>
+                            <div class="layui-input-block jsfs">
+                                <div class="upload-image">
+                                    <img src="../images/add.png" />
+                                    <p>上传照片</p>
+                                </div>
+                                <img class="upload-show" src="../images/user.jpg" />
+                                <p>（支持.jpg/.png 格式，建议尺寸200*200px，不能超过200kb)</p>
+                            </div>
+                        </div>
+                        <div class="layui-form-item required">
+                            <label class="layui-form-label">昵称</label>
+                            <div class="layui-input-block nc">
+                                <div class="nc-total">
+                                    <span>0</span>/8
+                                </div>
+                                <input type="text" maxlength='8' name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入昵称" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">个人简介</label>
+                            <div class="layui-input-block">
+                                <textarea name="" required lay-verify="required" placeholder="请输入个人简介"
+                                    class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">所在地</label>
+                            <div class="layui-input-block szd">
+                                <div class="szd-item">
+                                    <select name="city" lay-verify="">
+                                        <option value="">福建省</option>
+                                        <option value="010">海南省</option>
+                                        <option value="021">天津市</option>
+                                        <option value="0571">北京市</option>
+                                    </select>
+                                </div>
+                                <div class="szd-item">
+                                    <select name="city" lay-verify="">
+                                        <option value="">兴安</option>
+                                        <option value="010">北京</option>
+                                        <option value="021">上海</option>
+                                        <option value="0571">杭州</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">所在公司</label>
+                            <div class="layui-input-block szgs">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入公司名称" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">姓名</label>
+                            <div class="layui-input-block w175">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入姓名" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">所在部门</label>
+                            <div class="layui-input-block w175">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入所在部门" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">职位</label>
+                            <div class="layui-input-block w175">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入职位" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">工作证明</label>
+                            <div class="layui-input-block gzzm">
+                                <div class="layui-upload-drag" id="test10">
+                                    <i class="layui-icon"></i>
+                                    <p>上传图片</p>
+                                    <div class="layui-hide" id="uploadDemoView">
+                                        <hr>
+                                        <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                    </div>
+                                </div>
+                                <p>（支持.jpg/.png 格式，建议尺寸200*200px,不能超过200kb)</p>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">联系方式</label>
+                            <div class="layui-input-block lxfs-box">
+                                <div class="lxfs">
+                                    <div class="lxfs-item">
+                                        <img src="../images/cs-phone.png" />
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="电话" class="layui-input">
+                                    </div>
+                                    <div class="lxfs-item">
+                                        <img src="../images/wechat.png" />
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="微信" class="layui-input">
+                                    </div>
+                                    <div class="lxfs-item">
+                                        <img src="../images/qq.png" />
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="QQ"" class="layui-input">
+                                    </div>
+                                    <div class="lxfs-item">
+                                        <img src="../images/email.png" />
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="电子邮箱" class="layui-input">
+                                    </div>
+                                </div>
+                                <p>（联系电话、微信号、QQ至少填一项）</p>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="padding-top: 65px;">
+                            <label class="layui-form-label"></label>
+                            <div class="layui-input-block w175">
+                                <button type="button" class="layui-btn" style="background:#1BBC9C;">修改资料</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-tab-item">
+                    <ul class="safe">
+                        <li>
+                            <label>手机</label>
+                            <div class="safe-cont">
+                                <img src="../images/warn.png" />
+                                <span class="safe-unbind">未绑定</span>
+                            </div>
+                            <span class="safe-btn">
+                                <button type="button" class="layui-btn">立即绑定</button>
+                            </span>
+                        </li>
+                        <li>
+                            <label>邮箱</label>
+                            <div class="safe-cont">
+                                <img src="../images/warn.png" />
+                                <span class="safe-unbind">未绑定</span>
+                            </div>
+                            <span class="safe-btn">
+                                <button type="button" class="layui-btn">立即绑定</button>
+                            </span>
+                        </li>
+                        <li>
+                            <label>密码</label>
+                            <div class="safe-cont">
+                                <img src="../images/warn.png" />
+                                <div>
+                                    <span>未绑定</span>
+                                    <p>密码要求至少包含字母，符号或数字中的两项且长度超过6位</p>
+                                    <p>建议您经常修改密码，以保证帐号更加安全。</p>
+                                </div>
+                            </div>
+                            <span class="safe-btn">
+                                <button type="button" class="layui-btn">立即绑定</button>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        layui.use(['element', 'form', 'upload'], function () {
+            var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+            var form = layui.form;
+            var upload = layui.upload;
+
+            //昵称输入框 事件
+            $('input','.nc').on('input',function(){
+               let text = $(this).val();
+               let totalEl = $('.nc-total','.nc');
+               totalEl.children('span').empty().append(text.length)
+            })
+
+
+
+            //多图片上传
+            upload.render({
+                elem: '#test10'
+                , url: 'https://httpbin.org/post' //改成您自己的上传接口
+                , multiple: true
+                , before: function (obj) {
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                    });
+                }
+                , done: function (res) {
+                    //上传完毕
+                }
+            });
+
+        })
+    })
+</script>

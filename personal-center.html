@@ -15,7 +15,7 @@
     <div id="page-header"></div>
     <!-- 页面容器元素 -->
     <div class="page-container" style="padding-top: 80px;">
-        <div class="page-flex">
+        <div class="page-flex" style="margin-bottom: 80px;">
             <div class="page-nav">
                 <ul>
                     <li>
@@ -74,9 +74,7 @@
                 </ul>
             </div>
             <div class="page-cont">
-                <div id="grzl" class="page-cont-none is-block">
-                    个人资料
-                </div>
+                <div id="grzl" class="page-cont-none is-block"></div>
                 <div id="aqsz" class="page-cont-none">安全设置</div>
                 <div id="gsrz" class="page-cont-none">公司入住</div>
                 <div id="fbxq" class="page-cont-none">发布需求</div>
@@ -119,6 +117,8 @@
                 //给当前添加激活状态
                 $(this).addClass('nav-item-active')
             }
+            //加载个人资料界面
+            $('#grzl').load('components/personal-data.html')
 
             //加载搜索列表
             $('#search-box').load('components/search-list.html')
