@@ -40,7 +40,7 @@
                 <li>安全设置</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
+                <div class="layui-tab-item">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label required">结算方式</label>
@@ -169,31 +169,45 @@
                         </div>
                     </form>
                 </div>
-                <div class="layui-tab-item">
+                <div class="layui-tab-item layui-show">
                     <ul class="safe">
                         <li>
                             <label>手机</label>
-                            <div class="safe-cont">
+                            <div class="safe-cont is-none" data-bind="-1">
                                 <img src="../images/warn.png" />
                                 <span class="safe-unbind">未绑定</span>
                             </div>
-                            <span class="safe-btn">
-                                <button type="button" class="layui-btn">立即绑定</button>
+                            <div class="safe-cont" data-bind="1">
+                                <img src="../images/check.png" />
+                                <span class="safe-unbind">
+                                    已绑定：158****2467
+                                </span>
+                            </div>
+                            <span class="safe-btn" data-target="phone">
+                                <button type="button" class="layui-btn is-none" data-bind="-1">立即绑定</button>
+                                <button type="button" class="update-btn" data-bind="1">修改</button>
                             </span>
                         </li>
                         <li>
                             <label>邮箱</label>
-                            <div class="safe-cont">
+                            <div class="safe-cont is-none" data-bind="-1">
                                 <img src="../images/warn.png" />
                                 <span class="safe-unbind">未绑定</span>
                             </div>
-                            <span class="safe-btn">
-                                <button type="button" class="layui-btn">立即绑定</button>
+                            <div class="safe-cont" data-bind="1">
+                                <img src="../images/check.png" />
+                                <span class="safe-unbind">
+                                    已绑定：55408**40@qq.com
+                                </span>
+                            </div>
+                            <span class="safe-btn" data-target="email">
+                                <button type="button" class="layui-btn is-none" data-bind="-1">立即绑定</button>
+                                <button type="button" class="update-btn" data-bind="1">修改</button>
                             </span>
                         </li>
                         <li>
                             <label>密码</label>
-                            <div class="safe-cont">
+                            <div class="safe-cont is-none" data-bind="-1">
                                 <img src="../images/warn.png" />
                                 <div>
                                     <span>未绑定</span>
@@ -201,8 +215,17 @@
                                     <p>建议您经常修改密码，以保证帐号更加安全。</p>
                                 </div>
                             </div>
-                            <span class="safe-btn">
-                                <button type="button" class="layui-btn">立即绑定</button>
+                            <div class="safe-cont" data-bind="1">
+                                <img src="../images/check.png" />
+                                <div>
+                                    <span>已绑定</span>
+                                    <p>密码要求至少包含字母，符号或数字中的两项且长度超过6位</p>
+                                    <p>建议您经常修改密码，以保证帐号更加安全。</p>
+                                </div>
+                            </div>
+                            <span class="safe-btn" data-target="password">
+                                <button type="button" class="layui-btn is-none" data-bind="-1">立即绑定</button>
+                                <button type="button" class="update-btn" data-bind="1">修改</button>
                             </span>
                         </li>
                     </ul>
@@ -213,10 +236,146 @@
 </div>
 <script>
     $(function () {
-        layui.use(['element', 'form', 'upload'], function () {
+        layui.use(['element', 'form', 'upload','layer'], function () {
             var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
             var form = layui.form;
             var upload = layui.upload;
+            var layer = layui.layer;
+            var passwordIndex = null,
+                emailIndex = null,
+                phoneIndex = null
+
+
+            //按钮弹窗
+            $('.safe-btn').on('click',function(){
+                let target = $(this).data('target');
+                if(target === 'password') openBindPassword()
+                if(target === 'email') openBindEmail()
+                if(target === 'phone') openBindPhone()
+
+            })
+            //绑定密码弹窗
+            function openBindPassword(){
+                passwordIndex = layer.open({
+                    type: 1, 
+                    skin: 'phone-dialog-cs',
+                    title:false,
+                    closeBtn:false,
+                    area: ['400px', '332px'],
+                    content: `
+                        <div class="dialog-box">
+                            <div class="box-close" data-val="password">
+                                <img src="../images/close.png" />    
+                            </div>
+                            <div class="box-title">修改密码</div>
+                            <div class="box-cont">
+                                <div class="box-cont-item">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入原密码" class="layui-input">
+                                </div>
+                                <div class="box-cont-item">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入6-30位的新密码" class="layui-input">
+                                </div>
+                                <div class="box-cont-item">
+                                    <input type="password" name="title" lay-verify="title" placeholder="确认新密码" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="dialog-btns">
+                                <span class="dialog-cancel" data-val="password">取消</span>
+                                <span class="dialog-submit">确定</span>    
+                            </div>
+                        </div>
+                    ` 
+                });
+            }
+            //绑定邮箱弹窗
+            function openBindEmail(){
+                emailIndex = layer.open({
+                    type: 1, 
+                    skin: 'phone-dialog-cs',
+                    title:false,
+                    closeBtn:false,
+                    area: ['400px', '274px'],
+                    content: `
+                        <div class="dialog-box">
+                            <div class="box-close" data-val="email">
+                                <img src="../images/close.png" />    
+                            </div>
+                            <div class="box-title">绑定邮箱账号</div>
+                            <div class="box-cont">
+                                <div class="box-cont-item">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入邮箱号码" class="layui-input">
+                                </div>
+                                <div class="box-cont-item send-ipt">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入邮箱验证码" class="layui-input">
+                                    <div class="send-btns">
+                                        <span class="is-send is-none">发送邮件</span>
+                                        <span class="has-send ">已发送</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog-btns">
+                                <span class="dialog-cancel" data-val="email">取消</span>
+                                <span class="dialog-submit">确定</span>    
+                            </div>
+                        </div>
+                    ` 
+                });
+            }
+            //绑定手机号弹窗
+            function openBindPhone(){
+                phoneIndex = layer.open({
+                    type: 1, 
+                    skin: 'phone-dialog-cs',
+                    title:false,
+                    closeBtn:false,
+                    area: ['400px', '304px'],
+                    content: `
+                        <div class="dialog-box">
+                            <div class="box-close" data-val="phone">
+                                <img src="../images/close.png" />    
+                            </div>
+                            <div class="box-title">修改手机号码</div>
+                            <div class="box-cont">
+                                <div class="has-phone-number">
+                                    <label>现在手机：</label>
+                                    156****3741
+                                </div>
+                                <div class="box-cont-item">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入邮箱号码" class="layui-input">
+                                </div>
+                                <div class="box-cont-item send-ipt">
+                                    <input type="password" name="title" lay-verify="title" placeholder="请输入邮箱验证码" class="layui-input">
+                                    <div class="send-btns">
+                                        <span class="is-send is-none">发送邮件</span>
+                                        <span class="has-send ">已发送</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog-btns">
+                                <span class="dialog-cancel" data-val="phone">暂不修改</span>
+                                <span class="dialog-submit">确定</span>    
+                            </div>
+                        </div>
+                    ` 
+                });
+            }
+
+             //关闭弹窗
+             $(document).undelegate('.box-close','click').delegate('.box-close','click',function(){
+               onCloseDialog(this)
+            })
+            //取消按钮事件
+            $(document).undelegate('.dialog-cancel','click').delegate('.dialog-cancel','click',function(){
+                onCloseDialog(this)
+            })
+
+            //关闭弹窗事件
+            function onCloseDialog(el){
+                let val = $(el).data('val');
+                if(val == "password") layer.close(passwordIndex)
+                if(val == "email") layer.close(emailIndex)
+                if(val == "phone") layer.close(phoneIndex)
+            }
 
             //昵称输入框 事件
             $('input','.nc').on('input',function(){

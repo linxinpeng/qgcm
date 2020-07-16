@@ -82,3 +82,12 @@ a,a:hover{color:#333;}
 .personal-data .layui-form-item{
     margin-bottom: 24px;
 }
+.dialog-box .layui-input{
+    border:1px solid rgba(221,221,221,1);
+    padding-left: 20px;
+    border-radius:4px;
+}
+.dialog-box .layui-input::placeholder{
+    font-size:14px;
+    color:rgba(170,170,170,1);
+}

@@ -444,6 +444,94 @@
   background: #1bbc9c;
   border-radius: 19px;
 }
+.personal-data .personal-data-content .layui-tab-content .safe li .safe-btn .update-btn {
+  width: 90px;
+  height: 38px;
+  border-radius: 19px;
+  border: 1px solid #1bbc9c;
+  background-color: #fff;
+  color: #1BBC9C;
+}
 .personal-data .personal-data-content .layui-tab-content .safe li:hover {
   background: #f8f9fc;
+}
+.dialog-box {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 11px;
+}
+.dialog-box .box-close {
+  text-align: right;
+}
+.dialog-box .box-close img {
+  width: 22px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.dialog-box .box-close img:hover {
+  opacity: 1;
+}
+.dialog-box .box-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.dialog-box .box-cont {
+  padding: 0 26px;
+}
+.dialog-box .box-cont .has-phone-number {
+  margin-bottom: 10px;
+}
+.dialog-box .box-cont-item {
+  margin-bottom: 18px;
+}
+.dialog-box .box-cont .send-ipt {
+  position: relative;
+}
+.dialog-box .box-cont .send-ipt input {
+  padding-right: 100px;
+}
+.dialog-box .box-cont .send-ipt .send-btns {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  padding-left: 24px;
+  border-left: 1px solid #DDDDDD;
+}
+.dialog-box .box-cont .send-ipt .send-btns .is-send {
+  font-size: 14px;
+  color: #3bb79c;
+  cursor: pointer;
+}
+.dialog-box .dialog-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.dialog-box .dialog-btns span {
+  width: 90px;
+  height: 38px;
+  border-radius: 4px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 14px;
+}
+.dialog-box .dialog-btns .dialog-cancel {
+  color: #666666;
+  background: #f8f9fc;
+  border: 1px solid #dddddd;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.dialog-box .dialog-btns .dialog-submit {
+  color: #fff;
+  background: #1bbc9c;
 }

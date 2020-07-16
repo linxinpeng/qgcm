@@ -429,12 +429,100 @@
                             background:rgba(27,188,156,1);
                             border-radius:19px;
                         }
+                        .update-btn{
+                            width:90px;
+                            height:38px;
+                            border-radius:19px;
+                            border:1px solid rgba(27,188,156,1);
+                            background-color: #fff;
+                            color: #1BBC9C;
+                        }
                     }
                     &:hover{
                         background:rgba(248,249,252,1);
                     }
                 }
             }
+        }
+    }
+}
+.dialog-box{
+    width:100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background:rgba(255,255,255,1);
+    border-radius:11px;
+    .box-close{
+        text-align: right;
+        img{
+            width: 22px;
+            cursor: pointer;
+            opacity: 0.5;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    .box-title{
+        font-size:20px;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .box-cont{
+        padding: 0 26px;
+        .has-phone-number{
+            margin-bottom: 10px;
+        }
+        &-item{
+            margin-bottom: 18px;
+        }
+        .send-ipt{
+            position: relative;
+            input{
+                padding-right: 100px;
+            }
+            .send-btns{
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                padding-left: 24px;
+                border-left: 1px solid #DDDDDD;
+                .is-send{
+                    font-size:14px;
+                    color:rgba(59,183,156,1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .dialog-btns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        span{
+            width:90px;
+            height:38px;
+            border-radius:4px;
+            line-height: 38px;
+            text-align: center;
+            font-size:14px;
+        }
+        .dialog-cancel{
+            color:rgba(102,102,102,1);
+            background:rgba(248,249,252,1);
+            border:1px solid rgba(221,221,221,1);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .dialog-submit{
+            color: #fff;
+            background:rgba(27,188,156,1);
         }
     }
 }
