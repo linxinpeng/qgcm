@@ -89,5 +89,8 @@ a,a:hover{color:#333;}
 }
 .dialog-box .layui-input::placeholder{
     font-size:14px;
-    color:rgba(170,170,170,1);
+    color:#ccc;
+}
+.dialog-box .layui-textarea::placeholder{
+    color: #ccc;
 }
