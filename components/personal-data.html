@@ -380,7 +380,7 @@
             //昵称输入框 事件
             $('input','.nc').on('input',function(){
                let text = $(this).val();
-               let totalEl = $('.nc-total','.nc');
+               let totalEl = $(this).prev('.nc-total')
                totalEl.children('span').empty().append(text.length)
             })
 

@@ -1,0 +1,165 @@
+<div class="post-want dialog-box">
+    <div class="post-edit is-none">
+        <div class="post-alert">
+            <img src="images/warn2.png" />
+            违规删除，违法封号！请严格按规则发布，勿投机取巧!
+        </div>
+        <div class="post-edit-form">
+            <form class="layui-form" action="">
+                <div class="layui-form-item w550">
+                    <label class="layui-form-label required">需求类型</label>
+                    <div class="layui-input-block">
+                        <div style="display:flex;align-items: center;">
+                            <div style="width: 400px;">
+                                <select name="quiz1">
+                                    <option value="">请选择省</option>
+                                    <option value="浙江" selected="">浙江省</option>
+                                    <option value="你的工号">江西省</option>
+                                    <option value="你最喜欢的老师">福建省</option>
+                                </select>
+                            </div>
+                            <img style="width: 18px;margin-left: 6px;" src="images/aui-icon-question.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required">标题</label>
+                    <div class="layui-input-block nc" style="width: 400px;">
+                        <div class="nc-total">
+                            <span>0</span>/20
+                        </div>
+                        <input type="text" maxlength='20' name="title" lay-verify="title" autocomplete="off"
+                            placeholder="请输入昵称" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required">结算方式</label>
+                    <div class="layui-input-block w400">
+                        <select name="quiz1">
+                            <option value="">请选择省</option>
+                            <option value="浙江" selected="">浙江省</option>
+                            <option value="你的工号">江西省</option>
+                            <option value="你最喜欢的老师">福建省</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required">付款方式</label>
+                    <div class="layui-input-block w400">
+                        <select name="quiz1">
+                            <option value="">请选择省</option>
+                            <option value="浙江" selected="">浙江省</option>
+                            <option value="你的工号">江西省</option>
+                            <option value="你最喜欢的老师">福建省</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属行业</label>
+                    <div class="layui-input-block w400">
+                        <select name="quiz1">
+                            <option value="">请选择省</option>
+                            <option value="浙江" selected="">浙江省</option>
+                            <option value="你的工号">江西省</option>
+                            <option value="你最喜欢的老师">福建省</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">需求描述</label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="为了提高合作对接的效率，请尽可能详细描述您的需求，包括但不限于项目背景、当前问题、其他个性化需求等。500字以内"
+                            class="layui-textarea"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required">有效时间</label>
+                    <div class="layui-input-block post-times">
+                        <div class="post-time w175">
+                            <input type="text" placeholder="请选择日期" class="layui-input" id="startTime" placeholder="yyyy-MM-dd">
+                            <img src="images/date.png" />
+                        </div>
+                        <span class="zhi">至</span>
+                        <div class="post-time w175">
+                            <input type="text" placeholder="请选择日期" class="layui-input" id="endTime" placeholder="yyyy-MM-dd">
+                            <img src="images/date.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">相关照片</label>
+                    <div class="layui-input-block">
+                        <div class="layui-upload-drag" id="test10">
+                            <i class="layui-icon"></i>
+                            <p>上传照片</p>
+                            <div class="layui-hide" id="uploadDemoView">
+                                <hr>
+                                <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                            </div>
+                        </div>
+                        <p class="upload-desc">（支持.jpg/.png 格式，最多3张，图中不能带有联系方式,不能超过200kb)</p>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required">联系方式</label>
+                    <div class="layui-input-block lxfs-box" style="width: 565px;">
+                        <div class="lxfs">
+                            <div class="lxfs-item">
+                                <img src="../images/wechat.png" />
+                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="微信"
+                                    class="layui-input">
+                            </div>
+                            <div class="lxfs-item">
+                                <img src="../images/qq.png" />
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="QQ"" class=" layui-input">
+                            </div>
+                            <div class="lxfs-item">
+                                <img src="../images/email.png" />
+                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="电子邮箱"
+                                    class="layui-input">
+                            </div>
+                        </div>
+                        <p class="upload-desc">（联系电话、微信号、QQ至少填一项）</p>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label required"></label>
+                    <div class="layui-input-block post-btns">
+                        <div class="post-btn-submit" style="background:#1BBC9C;color: #fff;">确认发布</div>
+                        <div class="post-btn-save">保存</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="post-success">
+        <div class="post-success-box">
+            <img src="images/check3.png" />
+            <h3>需求发布成功</h3>
+            <p>描述内容，文案居中对齐，宽度根据文字内容自适应，超出480px后折行，此样式规则适用于页面结果反馈。若没有文案就不显示。</p>
+            <div class="post-btns" style="padding-top: 34px;">
+                <div style="background-color: #1BBC9C;color: #fff;border-color: #1BBC9C;">查看详情</div>
+                <div>返回首页</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        layui.use(['form', 'upload', 'laydate'], function () {
+            var form = layui.form;
+            var upload = layui.upload;
+            var laydate = layui.laydate;
+
+            //常规用法
+            laydate.render({
+                elem: '#startTime'
+            });
+             //常规用法
+             laydate.render({
+                elem: '#endTime'
+            });
+        })
+    })
+</script>

@@ -46,6 +46,9 @@
 .w175 {
   width: 175px;
 }
+.w400 {
+  width: 400px;
+}
 .green-bor-title {
   position: relative;
   font-size: 16px;
@@ -63,6 +66,27 @@
   height: 14px;
   background: #3bb79c;
   border-radius: 2px;
+}
+.nc {
+  width: 260px;
+  position: relative;
+}
+.nc .nc-total {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #cccccc;
+}
+.nc input {
+  padding-right: 40px;
+}
+.upload-desc {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
 }
 .release-tabs {
   width: 1200px;
@@ -369,21 +393,6 @@
   color: #999999;
   margin-top: 8px;
 }
-.personal-data .personal-data-content .layui-tab-content .nc {
-  width: 260px;
-  position: relative;
-}
-.personal-data .personal-data-content .layui-tab-content .nc .nc-total {
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-  font-size: 12px;
-  color: #cccccc;
-}
-.personal-data .personal-data-content .layui-tab-content .nc input {
-  padding-right: 40px;
-}
 .personal-data .personal-data-content .layui-tab-content .szd {
   display: flex;
   align-items: center;
@@ -685,12 +694,6 @@
   display: inline-block;
   width: 124px;
 }
-.company-in .company-cont .company-step-two .layui-form-item .upload-desc {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #999999;
-}
 .company-in .company-cont .company-step-three {
   padding: 0 60px;
 }
@@ -721,4 +724,87 @@
   font-weight: 400;
   color: #999999;
   margin-top: 8px;
+}
+.post-want {
+  padding: 60px;
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+.post-want .post-edit .post-alert {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  background: #fff0ef;
+  border-radius: 4px;
+  border: 1px solid #ffaba6;
+  padding-left: 16px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  color: #666666;
+  margin-bottom: 40px;
+}
+.post-want .post-edit .post-alert img {
+  width: 14px;
+  display: block;
+  margin-right: 8px;
+}
+.post-want .post-edit .post-times {
+  display: flex;
+  align-items: center;
+}
+.post-want .post-edit .post-times .layui-input {
+  padding-right: 30px;
+}
+.post-want .post-edit .post-times .post-time {
+  position: relative;
+}
+.post-want .post-edit .post-times .post-time img {
+  width: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+}
+.post-want .post-edit .post-times span.zhi {
+  margin: 0 6px;
+}
+.post-want .post-btns {
+  display: flex;
+  align-items: center;
+  padding-top: 65px;
+}
+.post-want .post-btns div {
+  margin-right: 16px;
+  padding: 8px 22px;
+  background: #f8f9fc;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+.post-want .post-success {
+  padding-top: 105px;
+  padding-bottom: 30px;
+}
+.post-want .post-success .post-success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-want .post-success .post-success-box img {
+  width: 64px;
+}
+.post-want .post-success .post-success-box h3 {
+  margin-top: 25px;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+}
+.post-want .post-success .post-success-box p {
+  width: 480px;
+  font-size: 14px;
+  color: #666666;
+  line-height: 22px;
+  text-align: center;
 }

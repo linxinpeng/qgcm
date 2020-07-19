@@ -46,6 +46,9 @@
 .w175{
     width: 175px;
 }
+.w400{
+    width: 400px;
+}
 .green-bor-title{
     position: relative;
     font-size:16px;
@@ -63,6 +66,27 @@
         background:rgba(59,183,156,1);
         border-radius:2px;
     }
+}
+.nc{
+    width: 260px;
+    position: relative;
+    .nc-total{
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        font-size:12px;
+        color:rgba(204,204,204,1);
+    }
+    input{
+        padding-right: 40px;
+    }
+}
+.upload-desc{
+    margin-top: 8px;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(153,153,153,1);
 }
 .release-tabs{
     width: 1200px;
@@ -348,21 +372,7 @@
                     margin-top: 8px;
                 }
             }
-            .nc{
-                width: 260px;
-                position: relative;
-                .nc-total{
-                    position: absolute;
-                    top: 50%;
-                    right: 12px;
-                    transform: translateY(-50%);
-                    font-size:12px;
-                    color:rgba(204,204,204,1);
-                }
-                input{
-                    padding-right: 40px;
-                }
-            }
+        
             .szd{
                 display: flex;
                 align-items: center;
@@ -682,12 +692,6 @@
                     display: inline-block;
                     width: 124px;
                 }
-                .upload-desc{
-                    margin-top: 8px;
-                    font-size:14px;
-                    font-weight:400;
-                    color:rgba(153,153,153,1);
-                }
             }
         }
         .company-step-three{
@@ -726,5 +730,92 @@
         font-weight:400;
         color:rgba(153,153,153,1);
         margin-top: 8px;
+    }
+}
+.post-want{
+    padding: 60px;
+    border-right: 1px solid rgba(242,242,242,1);
+    border-bottom: 1px solid rgba(242,242,242,1);
+    .post-edit{
+        .post-alert{
+            display: flex;
+            align-items: center;
+            height:32px;
+            background:rgba(255,240,239,1);
+            border-radius:4px;
+            border:1px solid rgba(255,171,166,1);
+            padding-left: 16px;
+            box-sizing: border-box;
+            font-size:14px;
+            font-family:PingFangSC-Regular,PingFang SC;
+            color:rgba(102,102,102,1);
+            margin-bottom: 40px;
+            img{
+                width: 14px;
+                display: block;
+                margin-right: 8px;
+            }
+        }
+        .post-times{
+            display: flex;
+            align-items: center;
+           
+            .layui-input{
+                padding-right: 30px;
+            }
+            .post-time{
+                position: relative;
+                img{
+                    width: 16px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 8px;
+                }
+            }
+           span.zhi{
+               margin: 0 6px;
+           }
+        }
+    }
+    .post-btns{
+        display: flex;
+        align-items: center;
+        padding-top: 65px;
+        div{
+            margin-right: 16px;
+            padding: 8px 22px;
+            background:rgba(248,249,252,1);
+            border-radius:4px;
+            border:1px solid rgba(221,221,221,1);
+            cursor: pointer;
+        }
+    }
+    .post-success{
+        padding-top: 105px;
+        padding-bottom: 30px;
+        .post-success-box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                width: 64px;
+            }
+            h3{
+                margin-top: 25px;
+                margin-bottom: 16px;
+                font-size:20px;
+                font-weight:bold;
+                color:rgba(51,51,51,1);
+            }
+            p{
+                width:480px;
+                font-size:14px;
+                color:rgba(102,102,102,1);
+                line-height:22px;
+                text-align: center;
+            }
+        }
+ 
     }
 }
