@@ -16,23 +16,6 @@
     <!-- 页面容器元素 -->
     <div class="page-container">
         <div class="menber-cont">
-            <div class="menber-cont__header">
-                <h1>青瓜会员VIP</h1>
-                <div class="menber-cont__header-desc">
-                    <div class="menber-cont__header-item">
-                        <img src="images/checkVip.png" />
-                        为你提供更多人脉和机会
-                    </div>
-                    <div class="menber-cont__header-item">
-                        <img src="images/checkVip.png" />
-                        获取线索更多更快
-                    </div>
-                    <div class="menber-cont__header-item">
-                        <img src="images/checkVip.png" />
-                        让合作更高效
-                    </div>
-                </div>
-            </div>
             <div class="menber-cont__introduce">
                 <div class="menber-cont__introduce-item">
                     <div class="menber-cont__introduce-item-top" id="free-version">
@@ -247,7 +230,7 @@
                             子账号功能
                         </h3>
                         <div class="__can">
-                           可添加10个账号
+                            可添加10个账号
                         </div>
                         <h3 class="__title">
                             子账号功能
@@ -379,6 +362,53 @@
                     </div>
                 </div>
             </div>
+            <div class="menber-cont__block">
+                <div class="overlap-title">
+                    <p>member</p>
+                    会员购买
+                </div>
+                <div class="menber-cont__block-vip">
+                    <p class="__vip-desc">购买套餐类型</p>
+                    <div class="__vip-cont">
+                        <div class="__vip-cont-item">
+                            <span class="__vip-tag"><img src="images/vip11.png" /></span>
+                            <div class="__vip-cont-item-money">
+                                <span>499</span>元/月
+                            </div>
+                            <p>100次沟通次数</p>
+                        </div>
+                        <div class="__vip-cont-item">
+                            <span class="__vip-tag"><img src="images/vip11.png" /></span>
+                            <div class="__vip-cont-item-money">
+                                <span>1399</span>元/季
+                            </div>
+                            <p>200次沟通次数</p>
+                        </div>
+                        <div class="__vip-cont-item">
+                            <span class="__vip-tag"><img src="images/vip2.png" /></span>
+                            <div class="__vip-cont-item-money">
+                                <span>5399</span>元/年
+                            </div>
+                            <p>500次沟通次数</p>
+                        </div>
+                        <div class="__vip-cont-item">
+                            <span class="__vip-tag">
+                                <span>企业会员套餐</span>
+                            </span>
+                            <div class="__vip-cont-item-money">
+                                <span>9998</span>元/季
+                            </div>
+                            <p>200次沟通次数</p>
+                            <a href="#">查看特权></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menber-cont__phone">
+                <p>账号购买</p>
+                <input type="text"  placeholder="请输入原手机号码" class="layui-input">
+                <div class="menber-cont__btn">立即支付</div>
+            </div>
         </div>
     </div>
     <!-- 页面底部 -->
@@ -387,7 +417,10 @@
     <script src="./js/lib/layui/layui.js"></script>
     <script>
         $(function () {
-
+            //添加激活状态
+            $('.__vip-cont-item').on('click',function(){
+                $(this).addClass('__vip-cont-item-active').siblings().removeClass('__vip-cont-item-active')
+            })
             //加载头部
             $('#page-header').load('layout/header.html')
             //加载底部
