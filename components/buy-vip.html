@@ -1,0 +1,157 @@
+<style>
+    /* @import url('/css/reset.css'); */
+    @import url('/css/buy-vip.css');
+    @import url('https://lib.baomitu.com/webui-popover/2.1.15/jquery.webui-popover.css');
+</style>
+<div class="dialog-box buy-vip">
+    <div class="buy-vip__head">
+        <div class="buy-vip__head-left">
+            <div class="__head-left-img">
+                <img src="/images/logo1.png" />
+            </div>
+            <div class="__head-left-info">
+                <p>账号：不愧是我</p>
+                <div class="__head-left-info-bottom">
+                    <p>您当前还不是VIP哦～ ｜</p>
+                    <span class="buy-desc" style="display: flex; align-items: center;cursor: pointer;">
+                        <img src="/images/question.png" />
+                        <p>购买说明</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="buy-vip__head-right">
+            <button>购买权益</button>
+        </div>
+        <div class="buy-vip__close">
+            <img src="/images/close2.png" />
+        </div>
+    </div>
+    <div class="buy-vip__cont">
+        <div class="__cont-tabs">
+            <div class="__cont-tabs__item tab-active" data-val="ptvip">
+                <img src="/images/vip11.png" />
+                深度运营版会员
+            </div>
+            <div class="__cont-tabs__item" data-val="hhvip">
+                <img src="/images/vip2.png" />
+                豪华商业版会员
+            </div>
+        </div>
+        <div class="__cont-box">
+            <div class="__cont-box__tab cont-active" data-val="ptvip">
+                <div class="__cont-box__tab-item __tab-item-active" data-money="399">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>1个月</p>
+                    <div>￥<span>399</span></div>
+                    <h3>原价￥499</h3>
+                </div>
+                <div class="__cont-box__tab-item" data-money="1680">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>6个月</p>
+                    <div>￥<span>1680</span></div>
+                    <h3>原价￥2499</h3>
+                </div>
+                <div class="__cont-box__tab-item" data-money="2880">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>12个月</p>
+                    <div>￥<span>2880</span></div>
+                    <h3>原价￥3489</h3>
+                </div>
+            </div>
+            <div class="__cont-box__tab" data-val="hhvip">
+                <div class="__cont-box__tab-item  __tab-item-active" data-money="399">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>1个月</p>
+                    <div>￥<span>399</span></div>
+                    <h3>原价￥499</h3>
+                </div>
+                <div class="__cont-box__tab-item" data-money="1680">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>6个月</p>
+                    <div>￥<span>1680</span></div>
+                    <h3>原价￥2499</h3>
+                </div>
+                <div class="__cont-box__tab-item" data-money="2880">
+                    <span class="cz">
+                        <img src="/images/cz.png" />
+                    </span>
+                    <p>12个月</p>
+                    <div>￥<span>2880</span></div>
+                    <h3>原价￥3489</h3>
+                </div>
+            </div>
+            <div class="__cont-box-bottom">
+                <div class="__bottom__left">
+                    <img src="/images/qrcode2.png" />
+                </div>
+                <div class="__bottom__center">
+                    <div>
+                        <label>实付金额：</label>
+                        <p>￥<b>399</b></p>
+                        有效期至2021年6月24日
+                    </div>
+                    <div>
+                        <span>
+                            <img src="/images/wx2.png" />
+                            <img src="/images/zfb.png" />
+                        </span>使用微信/支付宝扫码支付，请在
+                        <span class="time">15分00秒</span>
+                        内完成付款
+                    </div>
+                </div>
+                <div class="__bottom__right">
+                    <img src="/images/pay.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/lib/jquery.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-YWS3qcI+w7SrjZr5VUPXwOxG3UFypaN+UKeLrW4uXQ3fAJ2pbCEXhxhgRcg6B4Os"
+    src="https://lib.baomitu.com/webui-popover/2.1.15/jquery.webui-popover.min.js"></script>
+<script>
+    $(function () {
+
+
+        $('.buy-desc').webuiPopover({ 
+            content: '本服务为虚拟产品，购买后不支持退款。如需帮助或对公付款，请联系客服。', 
+            trigger: 'hover',
+            width:'185px'
+        })
+        //  选中价格
+        $('.__cont-box__tab-item', '.__cont-box__tab').on('click', function () {
+            let moeny = $(this).data('money');
+            $('b').text(moeny)
+
+            $(this).addClass('__tab-item-active').siblings().removeClass('__tab-item-active')
+        })
+        //  深度运营会员 跟 豪华商业版会员切换
+        $('.__cont-tabs__item ', '.buy-vip').on('click', function () {
+            let val = $(this).data('val');
+            $('b').text('399')
+            $(this).addClass('tab-active').siblings().removeClass('tab-active')
+            $('.__cont-box__tab', '.__cont-box').each(function () {
+                $(this).removeClass('cont-active');
+                if ($(this).data('val') === val) {
+                    $(this).addClass('cont-active')
+                }
+            })
+        })
+        //关闭弹窗
+        $('.buy-vip__close').on('click', function () {
+            var index = parent.layer.getFrameIndex(window.name)
+            parent.layer.close(index)
+        })
+    })
+</script>

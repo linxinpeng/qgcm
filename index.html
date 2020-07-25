@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青瓜平台</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/other.css">
 </head>
 
 <body>
@@ -37,14 +38,28 @@
     <script src="./js/lib/jquery.min.js"></script>
     <script src="./js/lib/layui/layui.js"></script>
     <script>
-        $(function(){
-            
-            //加载搜索列表
-            $('#search-box').load('components/search-list.html')
-            //加载头部
-            $('#page-header').load('layout/header.html')
-            //加载底部
-            $('#page-footer').load('layout/footer.html')
+        $(function () {
+            layui.use(['layer', 'form'], function () {
+                var layer = layui.layer;
+
+                $('.first-party').on('click', function () {
+                    window.name = layer.open({
+                        type: 2,
+                        skin: 'phone-dialog-cs',
+                        area: ['730px', '550px'],
+                        title: '',
+                        closeBtn: 0,
+                        content: ['components/buy-vip.html',0]
+                    });
+                })
+
+                //加载搜索列表
+                $('#search-box').load('components/search-list.html')
+                //加载头部
+                $('#page-header').load('layout/header.html')
+                //加载底部
+                $('#page-footer').load('layout/footer.html')
+            })
         })
     </script>
 </body>
