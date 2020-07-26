@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="/css/help.css">
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container" style="padding-top: 80px;padding-bottom: 80px;background:rgba(248,249,252,1);">
+        <div class="page-flex">
+            <div class="page-nav">
+                <ul>
+                    <li>
+                        <div class="nav-title nav-item nav-more">
+                            <span>账号相关</span>
+                            <img class="nav-arrow-up nav-arrow-down" src="images/up.png" />
+                        </div>
+                        <div class="nav-cont">
+                            <span class="nav-item  nav-item-active" data-target="zhglcjwt">账号管理常见问题</span>
+                            <span class="nav-item" data-target="sfjscjwt">身份角色常见问题</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="rzzn">
+                            <span>认证指南</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="hyqy">
+                            <span>会员权益</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="hzxx">
+                            <span>合作信息</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="yjfk">
+                            <span>意见反馈</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-cont" style="padding: 40px 60px;">
+                <div class="help-box">
+                    <h3 class="help-box__big">意见与建议反馈</h3>
+                    <div class="feedback-cont">
+                        <form class="layui-form" action="">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label required">反馈内容</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="请简要描述您要反馈的意见或建议内容，最多可输入500字"
+                                        class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">相关照片</label>
+                                <div class="layui-input-block">
+                                    <div class="layui-upload-drag" id="test10">
+                                        <i class="layui-icon"></i>
+                                        <p>点击或拖拽上传照片</p>
+                                        <div class="layui-hide" id="uploadDemoView">
+                                            <hr>
+                                            <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                        </div>
+                                    </div>
+                                    <p>（支持.jpg/.png 格式，最多上传3张，不能超过200kb)</p>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">联系方式</label>
+                                <div class="layui-input-block lxfs-box">
+                                    <div class="lxfs">
+                                        <div class="lxfs-item">
+                                            <img src="../images/cs-phone.png" />
+                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                                placeholder="电话" class="layui-input">
+                                        </div>
+                                        <div class="lxfs-item">
+                                            <img src="../images/wechat.png" />
+                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                                placeholder="微信" class="layui-input">
+                                        </div>
+                                        <div class="lxfs-item">
+                                            <img src="../images/qq.png" />
+                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                                placeholder="QQ"" class=" layui-input">
+                                        </div>
+                                        <div class="lxfs-item">
+                                            <img src="../images/email.png" />
+                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                                placeholder="电子邮箱" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <p>（联系电话、微信号、QQ至少填一项）</p>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"></label>
+                                <div class="layui-input-block">
+                                    <button class="submit">立即提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/layui/layui.js"></script>
+    <script>
+        $(function () {
+            layui.use(['element', 'form'], function () {
+                var form = layui.form
+                var element = layui.element;
+                //定义当前nav点击项
+                let currentTarget = 'zhglcjwt';
+
+                $('.collapse-head').on('click', function () {
+                    $(this).toggleClass('expand')
+                    $(this).next('.collapse-cont').slideToggle()
+                })
+
+                //左侧导航栏点击事件
+                $('.nav-item', '.page-nav').on('click', function () {
+                    let title = $(this).data('target')
+                    if (!title || currentTarget === title) return;
+                    currentTarget = title;
+                    setNavStyle.call(this)
+                    $(`#${currentTarget}`).addClass('is-block').siblings().removeClass('is-block')
+                })
+
+                //缩放按钮
+                $('.nav-more', '.page-nav').on('click', function () {
+                    let el = $(this).next('.nav-cont')
+                    el.slideToggle();
+                    $(this).children('.nav-arrow-up').toggleClass('nav-arrow-down')
+                })
+
+                //设置样式
+                function setNavStyle() {
+                    //移除所有激活状态
+                    $('.nav-item-active').removeClass('nav-item-active')
+                    //给当前添加激活状态
+                    $(this).addClass('nav-item-active')
+                }
+
+                //加载头部
+                $('#page-header').load('layout/header.html')
+                //加载底部
+                $('#page-footer').load('layout/footer.html')
+            })
+        })
+    </script>
+</body>
+
+</html>

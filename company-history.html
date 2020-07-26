@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="/css/search-list.css" />
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container" style="padding-top: 80px;padding-bottom: 80px;background:rgba(248,249,252,1);">
+        <div class="page-flex">
+            <div class="page-nav">
+                <ul>
+                    <li>
+                        <div class="nav-title nav-item nav-more">
+                            <img src="images/personal.png" />
+                            <span>个人中心</span>
+                            <img class="nav-arrow-up nav-arrow-down" src="images/up.png" />
+                        </div>
+                        <div class="nav-cont">
+                            <span class="nav-item" data-target="grzl">个人资料</span>
+                            <span class="nav-item" data-target="aqsz">安全设置</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="gsrz">
+                            <img src="images/personal.png" />
+                            <span>公司入驻</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="fbxq">
+                            <img src="images/personal.png" />
+                            <span>发布需求</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="wdfb">
+                            <img src="images/personal.png" />
+                            <span>我的发布</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="pphz">
+                            <img src="images/personal.png" />
+                            <span>匹配合作</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item nav-item-active" data-target="hzls">
+                            <img src="images/personal.png" />
+                            <span>合作历史</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="xxzx">
+                            <img src="images/personal.png" />
+                            <span>消息中心</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-title nav-item" data-target="gjcdy">
+                            <img src="images/personal.png" />
+                            <span>关键词订阅</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="page-cont" style="width: 980px;box-sizing: border-box;padding: 40px 50px;border-right: 1px solid #F2F2F2;border-bottom: 1px solid #F2F2F2;">
+                <div class="search-list__list">
+                    <div class="search-list__list-content"  style="width: 880px;"   >
+                        <div class="search-list__list-header">
+                            <span class="w200">姓名</span>
+                            <span class="w200">公司</span>
+                            <span class="w370">介绍</span>
+                            <span class="f1">发布时间</span>
+                        </div>
+                        <div class="search-list__list-table" id="search-list__cont"></div>
+                    </div>
+                    <div class="search-list__list-page">
+                        <div id="search-page"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="./js/lib/jquery.min.js"></script>
+    <script src="./js/lib/layui/layui.js"></script>
+    <script src="data/data.js"></script>
+    <script>
+        $(function () {
+            layui.use(['element', 'laypage'], function () {
+                var element = layui.element;
+                var laypage = layui.laypage
+
+                    //循环遍历数组  渲染列表DOM
+                    ; (function () {
+                        //获取要渲染的元素
+                        const el = $('#search-list__cont');
+                        //定义模板
+                        let html = data.goodList.map(v => {
+                            return `
+                <div class="table-box">
+                    <div class="table-row">
+                        <div class="w200 table-col">
+                            <div class="head-portrait">
+                                <img class="user-header" src="${v.userImg}" />
+                            </div>
+                            <div class="user-info">
+                                <h3>${v.name}</h3>
+                                <div class="user-tag">
+                                    ${v.tag.map(tag => {
+                                return `<span>${tag}</span>`
+                            }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w250 table-col">
+                            ${v.company}
+                        </div>
+                        <div class="w370 table-col ellips2">
+                            ${v.desc}
+                        </div>
+                        <div class="f1 table-col" style="color:#828898;">
+                            ${v.sendTime}
+                        </div>
+                    </div>
+                    <div class="table-box--slide">
+                        <div class="slide-row">
+                            <div class="slide-row--col1">
+                                <div class="icon">
+                                    <img src="images/wechat.png" />
+                                    <label>微信号：</label>
+                                </div>
+                                <p>${v.userInfo.wechat}</p>
+                            </div>
+                            <div class="slide-row--col2">
+                                <div class="icon">
+                                    <img src="images/zy.png" />
+                                    <label>资源类型：</label>
+                                </div>
+                                <p>${v.userInfo.zytype}</p>
+                            </div>   
+                        </div>
+                        <div class="slide-row">
+                            <div class="slide-row--col1">
+                                <div class="icon">
+                                    <img src="images/phone.png" />
+                                    <label>手机号：</label>
+                                </div>
+                                <p>${v.userInfo.phone}</p>
+                            </div>
+                            <div class="slide-row--col2">
+                                <div class="icon">
+                                    <img src="images/accout.png" />
+                                    <label>账号类型：</label>
+                                </div>
+                                <p>${v.userInfo.account}</p>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+                `
+                        }).join('')
+                        // 清空dom元素 添加模板
+                        el.empty().append(html)
+                    })()
+
+
+                //初始化页面page
+                laypage.render({
+                    elem: 'search-page',
+                    prev: '<img src="images/prev.png" style="width: 14px;"/>',
+                    next: '<img src="images/next.png" style="width: 14px;"/>'
+                    , count: 100
+                    , layout: ['count', 'prev', 'page', 'next', 'skip']
+                    , jump: function (obj) {
+                        console.log(obj)
+                    },
+
+                });
+                //定义当前nav点击项
+                let currentTarget = 'grzl';
+                //左侧导航栏点击事件
+                $('.nav-item', '.page-nav').on('click', function () {
+                    let title = $(this).data('target')
+                    if (!title || currentTarget === title) return;
+                    currentTarget = title;
+                    setNavStyle.call(this)
+                    $(`#${currentTarget}`).addClass('is-block').siblings().removeClass('is-block')
+                })
+
+                //缩放按钮
+                $('.nav-more', '.page-nav').on('click', function () {
+                    let el = $(this).next('.nav-cont')
+                    el.slideToggle();
+                    $(this).children('.nav-arrow-up').toggleClass('nav-arrow-down')
+                })
+
+                //设置样式
+                function setNavStyle() {
+                    //移除所有激活状态
+                    $('.nav-item-active').removeClass('nav-item-active')
+                    //给当前添加激活状态
+                    $(this).addClass('nav-item-active')
+                }
+
+                //加载搜索列表
+                $('#search-box').load('components/search-list.html')
+                //加载头部
+                $('#page-header').load('layout/header.html')
+                //加载底部
+                $('#page-footer').load('layout/footer.html')
+            })
+        })
+    </script>
+</body>
+
+</html>

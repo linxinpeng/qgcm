@@ -1,0 +1,49 @@
+.message-box {
+  padding-top: 21px;
+}
+.message-box__item {
+  display: flex;
+  padding: 20px;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  margin-bottom: 20px;
+}
+.message-box__item-avatar {
+  width: 44px;
+}
+.message-box__item-avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+.message-box__item-cont {
+  flex: 1;
+  padding-left: 16px;
+}
+.message-box__item-cont .less-tip {
+  font-size: 14px;
+  color: #aaaaaa;
+  padding-bottom: 6px;
+}
+.message-box__item-cont p {
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 1px;
+}
+.message-box__item-btn {
+  width: 146px;
+  text-align: center;
+}
+.message-box__item-btn button {
+  width: 106px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 23px;
+  border: 1px solid #3bb79c;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  color: #3bb79c;
+  letter-spacing: 1px;
+}

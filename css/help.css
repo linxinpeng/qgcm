@@ -1,0 +1,143 @@
+.page-cont {
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+.help-box h3.help-box__big {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.help-box .collapse {
+  margin-bottom: 4px;
+}
+.help-box .collapse .collapse-head {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.help-box .collapse .collapse-head img {
+  display: block;
+  height: 4px;
+  margin-right: 8px;
+  transform: rotate(-90deg);
+  transition: all 0.3s ease;
+}
+.help-box .collapse .collapse-head h3 {
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #333333;
+  line-height: 50px;
+}
+.help-box .collapse .collapse-head h3:hover {
+  color: #3BB79C;
+}
+.help-box .collapse .collapse-cont {
+  display: none;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  background: #f8f9fc;
+}
+.help-box .collapse .collapse-cont .collapse-cont__inner h3 {
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 1px;
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+.help-box .collapse .collapse-cont .collapse-cont__inner p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.8;
+}
+.help-box .expand .collapse-cont {
+  display: block;
+}
+.help-box .expand img {
+  transform: rotate(0);
+}
+.help-box__unok {
+  margin-left: 170px;
+  margin-top: 50px;
+}
+.help-box__unok h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 23px;
+}
+.help-box__unok-options {
+  display: flex;
+  align-items: center;
+}
+.help-box__unok-options .__unok-options-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 190px;
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #ededed;
+  margin-right: 40px;
+}
+.help-box__unok-options .__unok-options-item p {
+  font-size: 14px;
+  color: #333333;
+  padding: 7px 0 12px 0;
+}
+.help-box__unok-options .__unok-options-item button {
+  width: 100px;
+  height: 38px;
+  background: #ffffff;
+  border-radius: 19px;
+  border: 1px solid #1bbc9c;
+  text-align: center;
+  line-height: 38px;
+  font-size: 14px;
+  color: #1bbc9c;
+}
+.help-box .feedback-cont {
+  padding-top: 50px;
+}
+.help-box .feedback-cont p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  margin-top: 8px;
+}
+.help-box .feedback-cont .submit {
+  margin-top: 60px;
+  width: 100px;
+  height: 38px;
+  background: #1bbc9c;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 38px;
+  text-align: center;
+  border: none;
+}
+.help-box .feedback-cont .lxfs-box .lxfs {
+  display: flex;
+  align-items: center;
+}
+.help-box .feedback-cont .lxfs-box .lxfs .lxfs-item {
+  margin-right: 10px;
+  position: relative;
+}
+.help-box .feedback-cont .lxfs-box .lxfs .lxfs-item img {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  height: 14px;
+  transform: translateY(-50%);
+}
+.help-box .feedback-cont .lxfs-box .lxfs .lxfs-item .layui-input {
+  padding-left: 30px;
+  border-radius: 4px;
+}

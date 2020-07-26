@@ -1,6 +1,10 @@
 .different-bg .search-list__header {
   background: #f8f9fc;
 }
+.hide-search .search-list__header,
+.hide-search .btn-check-phone {
+  display: none !important;
+}
 .search-list__header {
   height: 180px;
   padding: 42px 0;
