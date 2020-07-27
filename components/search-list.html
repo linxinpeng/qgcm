@@ -1,9 +1,12 @@
-<div class="search-list">
+<style>
+    @import url(/css/search-list.css);
+</style>
+<div class="search-list" style="display: none;">
     <div class="search-list__header">
         <div class="search-list__header-inner">
             <div class="search-list__header-top">
                 <div class="ipt-box">
-                    <img src="images/search.png" />
+                    <img src="/images/search.png" />
                     <input id="search-input" type="text" placeholder="请输入公司名称/姓名/地区/资源关键字" />
                     <button type="button" class="layui-btn layui-btn-radius search-btn">搜索</button>
                 </div>
@@ -11,9 +14,9 @@
             </div>
             <div class="search-list__header-hot">
                 <label>热门搜索：</label>
-                <span><img src="images/hot.png" />销售渠道</span>
-                <span><img src="images/hot.png" />优质货源</span>
-                <span><img src="images/hot.png" />推广甲方</span>
+                <span><img src="/images/hot.png" />销售渠道</span>
+                <span><img src="/images/hot.png" />优质货源</span>
+                <span><img src="/images/hot.png" />推广甲方</span>
                 <span>效果渠道</span>
                 <span>招商加盟</span>
                 <span>资源互换</span>
@@ -40,13 +43,11 @@
         </div>
     </div>
 </div>
-<style>
-    @import url(/css/search-list.css);
-</style>
-<script src="data/data.js"></script>
+<script src="/data/data.js"></script>
 <script>
     $(function () {
         layui.use(['laypage', 'layer'], function () {
+            
             var laypage = layui.laypage
                 , layer = layui.layer;
 
@@ -95,14 +96,14 @@
                         <div class="slide-row">
                             <div class="slide-row--col1">
                                 <div class="icon">
-                                    <img src="images/wechat.png" />
+                                    <img src="/images/wechat.png" />
                                     <label>微信号：</label>
                                 </div>
                                 <p>${v.userInfo.wechat}</p>
                             </div>
                             <div class="slide-row--col2">
                                 <div class="icon">
-                                    <img src="images/zy.png" />
+                                    <img src="/images/zy.png" />
                                     <label>资源类型：</label>
                                 </div>
                                 <p>${v.userInfo.zytype}</p>
@@ -111,14 +112,14 @@
                         <div class="slide-row">
                             <div class="slide-row--col1">
                                 <div class="icon">
-                                    <img src="images/phone.png" />
+                                    <img src="/images/phone.png" />
                                     <label>手机号：</label>
                                 </div>
                                 <p>${v.userInfo.phone}</p>
                             </div>
                             <div class="slide-row--col2">
                                 <div class="icon">
-                                    <img src="images/accout.png" />
+                                    <img src="/images/accout.png" />
                                     <label>账号类型：</label>
                                 </div>
                                 <p>${v.userInfo.account}</p>
@@ -143,8 +144,8 @@
             //初始化页面page
             laypage.render({
                 elem: 'search-page',
-                prev:'<img src="images/prev.png" style="width: 14px;"/>',
-                next: '<img src="images/next.png" style="width: 14px;"/>'
+                prev:'<img src="/images/prev.png" style="width: 14px;"/>',
+                next: '<img src="/images/next.png" style="width: 14px;"/>'
                 , count: 100
                 , layout: ['count', 'prev', 'page', 'next', 'skip']
                 , jump: function (obj) {
@@ -152,6 +153,10 @@
                 },
                 
             });
+
+            setTimeout(()=>{
+                $('.search-list').css('display','block')
+            },100)
         })
     })
 </script>

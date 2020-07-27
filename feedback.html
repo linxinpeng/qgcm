@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>青瓜平台</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="js/lib/layui/css/layui.css">
-    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/other.css">
     <link rel="stylesheet" href="/css/help.css">
 </head>
 
@@ -22,7 +22,7 @@
                     <li>
                         <div class="nav-title nav-item nav-more">
                             <span>账号相关</span>
-                            <img class="nav-arrow-up nav-arrow-down" src="images/up.png" />
+                            <img class="nav-arrow-up nav-arrow-down" src="/images/up.png" />
                         </div>
                         <div class="nav-cont">
                             <span class="nav-item  nav-item-active" data-target="zhglcjwt">账号管理常见问题</span>
@@ -83,22 +83,22 @@
                                 <div class="layui-input-block lxfs-box">
                                     <div class="lxfs">
                                         <div class="lxfs-item">
-                                            <img src="../images/cs-phone.png" />
+                                            <img src="/images/cs-phone.png" />
                                             <input type="text" name="title" lay-verify="title" autocomplete="off"
                                                 placeholder="电话" class="layui-input">
                                         </div>
                                         <div class="lxfs-item">
-                                            <img src="../images/wechat.png" />
+                                            <img src="/images/wechat.png" />
                                             <input type="text" name="title" lay-verify="title" autocomplete="off"
                                                 placeholder="微信" class="layui-input">
                                         </div>
                                         <div class="lxfs-item">
-                                            <img src="../images/qq.png" />
+                                            <img src="/images/qq.png" />
                                             <input type="text" name="title" lay-verify="title" autocomplete="off"
                                                 placeholder="QQ"" class=" layui-input">
                                         </div>
                                         <div class="lxfs-item">
-                                            <img src="../images/email.png" />
+                                            <img src="/images/email.png" />
                                             <input type="text" name="title" lay-verify="title" autocomplete="off"
                                                 placeholder="电子邮箱" class="layui-input">
                                         </div>
@@ -120,8 +120,8 @@
     </div>
     <!-- 页面底部 -->
     <div id="page-footer"></div>
-    <script src="./js/lib/jquery.min.js"></script>
-    <script src="./js/lib/layui/layui.js"></script>
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/layui/layui.js"></script>
     <script>
         $(function () {
             layui.use(['element', 'form'], function () {
@@ -160,9 +160,9 @@
                 }
 
                 //加载头部
-                $('#page-header').load('layout/header.html')
+                $('#page-header').load('/layout/header.html')
                 //加载底部
-                $('#page-footer').load('layout/footer.html')
+                $('#page-footer').load('/layout/footer.html')
             })
         })
     </script>

@@ -1,4 +1,4 @@
-const data = {
+let data = {
     goodList:[
         {
             userImg: 'images/user.jpg',

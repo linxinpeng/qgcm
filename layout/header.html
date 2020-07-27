@@ -1,18 +1,21 @@
-<div class="page-header">
+<style>
+    @import url(/css/layout.css);
+</style>
+<div class="page-header" style="display: none;">
     <div class="header-inner">
         <div class="header-inner--logo">
-            <img src="images/header-logo.png" />
+            <img src="/images/header-logo.png" />
         </div>
         <div class="header-inner--nav"></div>
         <div class="header-inner--admin">
             <div class="header-inner--admin--unlogin">
-                <img src="images/user.png" />
+                <img src="/images/user.png" />
                 <span id="login">登录</span>
                 <span id="register">注册</span>
             </div>
             <div class="header-inner--admin--unvip is-none">
-                <img src="images/update-user.png" style="margin-right: 4px;" />
-                <img src="images/ben.png" />
+                <img src="/images/update-user.png" style="margin-right: 4px;" />
+                <img src="/images/ben.png" />
                 <div class="header-inner--admin--pop">
                     <div class="admin--pop--head admin-active">
                         <h3>153****3648</h3>
@@ -46,32 +49,33 @@
                 },
                 {
                     name: '发布需求',
-                    url: 'push.html'
+                    url: 'release-requirements.html?type=1'
                 },
                 {
                     name: '合作企业',
-                    url: '#'
+                    url: 'release-requirements.html?type=2'
                 },
                 {
                     name: '会员特权',
-                    url: '#',
-                    icon: 'images/vip.png'
+                    url: 'member.html',
+                    icon: '/images/vip.png'
                 },
-                {
-                    name: '关于我们',
-                    url: '#'
-                },
-                {
-                    name: '知识付费',
-                    url: '#'
-                },
+                // {
+                //     name: '关于我们',
+                //     url: '#'
+                // },
+                // {
+                //     name: '知识付费',
+                //     url: '#'
+                // },
                 {
                     name: '帮助中心',
-                    url: '#'
+                    url: 'help.html'
                 }
             ]
             //获取地址参数
-            const pathname = window.location.pathname;
+            const pathname = window.location.pathname + window.location.search;
+            console.log(pathname)
             //遍历数组渲染html
             ; (function () {
                 const el = $('.header-inner--nav');
@@ -112,8 +116,8 @@
             //登录点击事件
             $('#login').click(function () {
                 //会员登录 样式状态改变
-                // $(this).parent('.header-inner--admin--unlogin').addClass('is-none');
-                // $('.header-inner--admin--unvip', '.header-inner--admin').removeClass('is-none')
+                $(this).parent('.header-inner--admin--unlogin').addClass('is-none');
+                $('.header-inner--admin--unvip', '.header-inner--admin').removeClass('is-none')
 
                 window.name = layer.open({
                     type: 2,
@@ -132,13 +136,14 @@
                     area: ['400px', '530px'],
                     title: '',
                     closeBtn: 0,
-                    content: 'components/PhoneDialog.html'
+                    content: '/components/PhoneDialog.html'
                 });
             })
+
+            setTimeout(()=>{
+                $('.page-header').css('display','block')
+            },100)
         });
 
     })
 </script>
-<style>
-    @import url(css/layout.css);
-</style>
