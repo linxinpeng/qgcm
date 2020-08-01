@@ -36,11 +36,11 @@
     <div class="personal-data-content">
         <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
             <ul class="layui-tab-title">
-                <li class="layui-this">个人中心</li>
-                <li>安全设置</li>
+                <li class="layui-this personal-data1">个人中心</li>
+                <li class="safe-setting">安全设置</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">
+                <div class="layui-tab-item layui-show personal-data-cont">
                     <form class="layui-form" action="">
                         <div class="layui-form-item">
                             <label class="layui-form-label required">结算方式</label>
@@ -169,7 +169,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="layui-tab-item">
+                <div class="layui-tab-item safe-setting-cont">
                     <ul class="safe">
                         <li>
                             <label>手机</label>
@@ -243,9 +243,26 @@
             var layer = layui.layer;
             var passwordIndex = null,
                 emailIndex = null,
-                phoneIndex = null
+                phoneIndex = null,
+                url = location.pathname;
+            
 
+            //设置默认的tab
+            if(url.includes('personal-data')){
+                $('li.personal-data1','.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
+                $('.personal-data-cont').addClass('layui-show').siblings().removeClass('layui-show')
+            }else{
+                $('li.safe-setting','.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
+                $('.safe-setting-cont').addClass('layui-show').siblings().removeClass('layui-show')
+            }
 
+            $('li.personal-data1','.layui-tab-title').on('click',function(){
+                console.log('in')
+                location.href = '/personal-data.html'
+            })
+            $('li.safe-setting','.layui-tab-title').on('click',function(){
+                location.href = '/safe-setting.html'
+            })
             //按钮弹窗
             $('.safe-btn').on('click',function(){
                 let target = $(this).data('target');

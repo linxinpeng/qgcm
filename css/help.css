@@ -57,7 +57,7 @@
   display: block;
 }
 .help-box .expand img {
-  transform: rotate(0);
+  transform: rotate(0) !important;
 }
 .help-box__unok {
   margin-left: 170px;

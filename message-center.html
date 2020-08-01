@@ -17,63 +17,7 @@
     <!-- 页面容器元素 -->
     <div class="page-container" style="padding-top: 80px;padding-bottom: 80px;background:rgba(248,249,252,1);">
         <div class="page-flex">
-            <div class="page-nav">
-                <ul>
-                    <li>
-                        <div class="nav-title nav-item nav-more">
-                            <img src="/images/grzx.png" />
-                            <span>个人中心</span>
-                            <img class="nav-arrow-up nav-arrow-down" src="/images/up.png" />
-                        </div>
-                        <div class="nav-cont">
-                            <span class="nav-item" data-target="grzl">个人资料</span>
-                            <span class="nav-item" data-target="aqsz">安全设置</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="gsrz">
-                            <img src="/images/gsrz.png" />
-                            <span>公司入驻</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="fbxq">
-                            <img src="/images/fbxq.png" />
-                            <span>发布需求</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="wdfb">
-                            <img src="/images/wdfb.png" />
-                            <span>我的发布</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="pphz">
-                            <img src="/images/pphz.png" />
-                            <span>匹配合作</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item nav-item-active" data-target="hzls">
-                            <img src="/images/hzls.png" />
-                            <span>合作历史</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="xxzx">
-                            <img src="/images/xxzx.png" />
-                            <span>消息中心</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="nav-title nav-item" data-target="gjcdy">
-                            <img src="/images/gjcdy.png" />
-                            <span>关键词订阅</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        <div id="nav"></div>
             <div class="page-cont" style="padding: 40px 60px;">
                 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
                     <ul class="layui-tab-title">
@@ -161,7 +105,8 @@
                     //给当前添加激活状态
                     $(this).addClass('nav-item-active')
                 }
-
+                //加载左侧菜单
+            $('#nav').load('/layout/nav.html')
                 //加载头部
                 $('#page-header').load('/layout/header.html')
                 //加载底部

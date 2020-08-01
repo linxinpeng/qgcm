@@ -23,13 +23,27 @@
                         <p class="admin-vip">豪华商业版会员</p>
                     </div>
                     <ul>
-                        <li>个人资料</li>
-                        <li>公司入驻</li>
-                        <li>我的发布</li>
-                        <li>匹配合作</li>
-                        <li>合作历史</li>
-                        <li>消息中心<span class="layui-badge" style="border-radius: 10px;padding: 0 8px;">29</span></li>
-                        <li>关键词订阅</li>
+                        <a href="/personal-data.html">
+                            <li>个人资料</li>
+                        </a>
+                        <a href="/company-in.html">
+                            <li>公司入驻</li>
+                        </a>
+                        <a href="/my-push.html">
+                            <li>我的发布</li>
+                        </a>
+                        <a href="/mate.html">
+                            <li>匹配合作</li>
+                        </a>
+                        <a href="/company-history.html">
+                            <li>合作历史</li>
+                        </a>
+                        <a href="/message-center.html">
+                            <li>消息中心<span class="layui-badge" style="border-radius: 10px;padding: 0 8px;">29</span></li>
+                        </a>
+                        <a href="/keyword.html">
+                            <li>关键词订阅</li>
+                        </a>
                         <li>退出登录</li>
                     </ul>
                 </div>
@@ -76,11 +90,11 @@
             //获取地址参数
             const pathname = window.location.pathname + window.location.search;
             console.log(pathname)
-            //遍历数组渲染html
-            ; (function () {
-                const el = $('.header-inner--nav');
-                let html = nav.map(item => {
-                    return `
+                //遍历数组渲染html
+                ; (function () {
+                    const el = $('.header-inner--nav');
+                    let html = nav.map(item => {
+                        return `
                 <div class="header-inner--item ${pathname.includes(item.url) ? 'nav-active' : ''}">
                     <a class="${item.icon ? 'colorYellow' : ''}" href="${item.url}">
                         ${item.icon ? `<img style="width: 20px" src="${item.icon}" />` : ''}
@@ -88,9 +102,9 @@
                     </a>
                 </div>
                 `
-                })
-                el.empty().append(html)
-            })()
+                    })
+                    el.empty().append(html)
+                })()
             //滚动条事件
             let routeName = window.location.pathname;
             if (routeName.includes('index')) {
@@ -102,7 +116,7 @@
                         $('.page-header').removeClass('other-style')
                     }
                 })
-            }else{
+            } else {
                 $(window).unbind('scroll')
                 $('.page-header').addClass('other-style')
             }
@@ -140,9 +154,9 @@
                 });
             })
 
-            setTimeout(()=>{
-                $('.page-header').css('display','block')
-            },100)
+            setTimeout(() => {
+                $('.page-header').css('display', 'block')
+            }, 100)
         });
 
     })

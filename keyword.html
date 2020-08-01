@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/other.css">
+    <style>
+        .keyword {
+            padding: 60px 20px;
+        }
+
+        .keyword h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #333333;
+        }
+
+        .keyword-cont {
+            display: flex;
+        }
+
+        .keyword-cont-col {
+            width: calc(50% - 50px);
+            margin-right: 50px;
+        }
+
+        .keyword-cont-col h3 {
+            margin-bottom: 20px;
+        }
+
+        .keyword-cont-col li {
+            margin-bottom: 20px;
+        }
+
+        .keyword-desc {
+            line-height: 1.5;
+            padding: 20px;
+            background-color: rgb(217, 242, 235);
+            margin: 20px 0;
+            text-align: justify;
+            font-size: 14px;
+            color: #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-container" style="padding-top: 80px;padding-bottom: 80px;background:rgba(248,249,252,1);">
+        <div class="page-flex">
+            <div id="nav"></div>
+            <div class="page-cont">
+                <div class="keyword">
+                    <h3>关键词订阅工具</h3>
+                    <p class="keyword-desc">
+                        关键词匹配工具触发逻辑：</br></br>
+                        说明：当你设置订阅关键词之后，一旦有用户发布的【需求】或【服务】信息里面带有你所订阅的关键词时，那么「青瓜传媒服务号」会自动推送一条消息提醒到你的微信上，你可以点击它进入页面，然后发起对接。</br></br>
+                        提示：关键词订阅能帮助你第一时间匹配到你所需要的合作信息，大大提升你的对接效率。目前该功能仅开放给企业认证会员，详情请咨询青瓜传媒官方客服。
+                    </p>
+                    <div class="keyword-cont">
+                        <div class="keyword-cont-col">
+                            <h3>需求订阅</h3>
+                            <ul>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                            </ul>
+                        </div>
+                        <div class="keyword-cont-col">
+                            <h3>服务订阅</h3>
+                            <ul>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                                <li><input type="text" placeholder="关键词" class="layui-input"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/layui/layui.js"></script>
+    <script>
+        $(function () {
+            //加载头部
+            $('#page-header').load('/layout/header.html')
+            //加载底部
+            $('#page-footer').load('/layout/footer.html')
+            //加载左侧菜单
+            $('#nav').load('/layout/nav.html')
+            //加载个人资料界面
+            $('#post-need').load('/components/post-want.html')
+        })
+    </script>
+</body>
+
+</html>

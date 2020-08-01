@@ -1,0 +1,98 @@
+<style>
+    @import url(/css/other.css);
+</style>
+<div class="page-nav" style="display: none;height: 100%;">
+    <ul>
+        <li>
+            <div class="nav-title nav-item nav-more">
+                <img src="/images/grzx.png" />
+                <span>个人中心</span>
+                <img class="nav-arrow-up nav-arrow-down" src="/images/up.png" />
+            </div>
+            <div class="nav-cont">
+                <span class="nav-item nav-item-active" data-url="personal-data">个人资料</span>
+                <span class="nav-item" data-url="safe-setting">安全设置</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="company-in">
+                <img src="/images/gsrz.png" />
+                <span>公司入驻</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="push-need">
+                <img src="/images/fbxq.png" />
+                <span>发布需求</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="my-push">
+                <img src="/images/wdfb.png" />
+                <span>我的发布</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="mate">
+                <img src="/images/pphz.png" />
+                <span>匹配合作</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item " data-url="company-history">
+                <img src="/images/hzls.png" />
+                <span>合作历史</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="message-center">
+                <img src="/images/xxzx.png" />
+                <span>消息中心</span>
+            </div>
+        </li>
+        <li>
+            <div class="nav-title nav-item" data-url="keyword">
+                <img src="/images/gjcdy.png" />
+                <span>关键词订阅</span>
+            </div>
+        </li>
+    </ul>
+</div>
+<script>
+    $(function () {
+        $('.page-nav').css('display','block')
+        //定义当前nav点击项
+        let currentTarget = location.pathname;
+
+        $('.nav-item', '.page-nav').each(function(){
+            $(this).removeClass('nav-item-active')
+           let url = $(this).data('url')
+           if(currentTarget.includes(url)){
+                $(this).addClass('nav-item-active')
+           }
+        })
+        //左侧导航栏点击事件
+        $('.nav-item', '.page-nav').on('click', function () {
+            let title = $(this).data('url')
+            if (!title || currentTarget.includes(title)) return;
+            currentTarget = title;
+            location.href = title + '.html'
+            setNavStyle.call(this)
+        })
+
+        //缩放按钮
+        $('.nav-more', '.page-nav').on('click', function () {
+            let el = $(this).next('.nav-cont')
+            el.slideToggle();
+            $(this).children('.nav-arrow-up').toggleClass('nav-arrow-down')
+        })
+
+        //设置样式
+        function setNavStyle() {
+            //移除所有激活状态
+            $('.nav-item-active').removeClass('nav-item-active')
+            //给当前添加激活状态
+            $(this).addClass('nav-item-active')
+        }
+    })
+</script>

@@ -42,14 +42,19 @@
             layui.use(['layer', 'form'], function () {
                 var layer = layui.layer;
                 $('.first-party').on('click', function () {
-                    window.name = layer.open({
-                        type: 2,
-                        skin: 'phone-dialog-cs',
-                        area: ['730px', '550px'],
-                        title: '',
-                        closeBtn: 0,
-                        content: ['components/buy-vip.html',0]
-                    });
+                    location.href = "/release-requirements.html?type=1"
+                    // window.name = layer.open({
+                    //     type: 2,
+                    //     skin: 'phone-dialog-cs',
+                    //     area: ['730px', '550px'],
+                    //     title: '',
+                    //     closeBtn: 0,
+                    //     content: ['components/buy-vip.html',0]
+                    // });
+                })
+
+                $('.second-party').off('click').on('click',function(){
+                    location.href = "/release-requirements.html?type=2"
                 })
 
                 //加载搜索列表
