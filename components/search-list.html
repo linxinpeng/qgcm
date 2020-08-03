@@ -57,6 +57,10 @@
             $('#search-input').on('blur',function(){
                 $(this).parent('.ipt-box').removeClass('ipt-box-active')
             })
+
+            $('.send-btn').off('click').on('click',function(){
+                location.href="./push-need.html"
+            })
             //循环遍历数组  渲染列表DOM
             ; (function () {
                 //获取要渲染的元素

@@ -110,7 +110,7 @@
   line-height: 36px;
 }
 .menber-cont__introduce-item-bottom ul li img {
-  height: 10px;
+  height: 14px;
 }
 .menber-cont__introduce-item-bottom ul li span:first-child {
   font-size: 16px;
@@ -251,7 +251,7 @@
   left: 0;
 }
 .menber-cont .menber-cont__block-vip .__vip-cont .__vip-cont-item .__vip-tag img {
-  height: 29px;
+  height: 19px;
 }
 .menber-cont .menber-cont__block-vip .__vip-cont .__vip-cont-item .__vip-tag span {
   display: inline-block;
@@ -286,6 +286,7 @@
   font-size: 14px;
   color: #1db798;
   line-height: 20px;
+  font-weight: bold;
 }
 .menber-cont .menber-cont__block-vip .__vip-cont .__vip-cont-item-active {
   border: 3px solid #9f6610 !important;

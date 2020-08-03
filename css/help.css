@@ -60,7 +60,6 @@
   transform: rotate(0) !important;
 }
 .help-box__unok {
-  margin-left: 170px;
   margin-top: 50px;
 }
 .help-box__unok h3 {
@@ -72,6 +71,7 @@
 .help-box__unok-options {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .help-box__unok-options .__unok-options-item {
   display: flex;
