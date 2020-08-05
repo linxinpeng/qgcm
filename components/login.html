@@ -17,13 +17,11 @@
                         <option value="86">+86</option>
                         <option value="010">+010</option>
                     </select>
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输手机号码"
-                        autocomplete="off" class="layui-input layui-input-reset">
+                    <input type="text" placeholder="请输手机号码" class="layui-input layui-input-reset">
                 </div>
                 <div class="phone-dialog--item">
                     <span class="input-meno">密码</span>
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入密码"
-                        autocomplete="off" class="layui-input layui-input-reset">
+                    <input type="password" placeholder="请输入密码" class="layui-input layui-input-reset">
                 </div>
                 <p class="login-forget">忘记密码?</p>
                 <div class="phone-dialog--btn">
@@ -36,7 +34,7 @@
         </div>
         <div class="login-icon">
             <span class="ic" data-hide="login-phone" data-show="login-wechat">
-                <img src="/images/wechat.png" />
+                <img src="/images/wx3.png" />
             </span>
         </div>
     </div>
@@ -46,14 +44,14 @@
             <p>微信一键登录更加快捷</p>
         </div>
         <div class="wechat-qrcode">
-            <img src="/images/qrcode.png" />
+            <img src="/images/wxCode.png" />
         </div>
         <div class="login-tip">
             <span>手机号登录</span>
         </div>
         <div class="login-icon">
             <span class="ic" data-hide="login-wechat" data-show="login-phone">
-                <img src="/images/phone.png" />
+                <img src="/images/phone3.png" />
             </span>
         </div>
     </div>
@@ -63,7 +61,7 @@
             <span>用户协议</span>
         </div>
         <div class="phone-dialog--footer-right">
-            <a href="#">手机号注册 ></a>
+            <a id="phone-register" href="#">手机号注册 ></a>
         </div>
     </div>
 </div>
@@ -91,12 +89,30 @@
 
         //关闭弹窗
         $('.head--close').click(function () {
+            onClose();
+        })
+
+        function onClose(){
             var index = parent.layer.getFrameIndex(window.name)
             parent.layer.close(index)
+        }
+
+        $('#phone-register').off('click').on('click', function () {
+            console.log('in')
+            onClose();
+            window.register = parent.layer.open({
+                type: 2,
+                skin: 'phone-dialog-cs',
+                area: ['400px', '530px'],
+                title: '',
+                closeBtn: 0,
+                content: '/components/PhoneDialog.html'
+            });
         })
 
         //忘记密码
         $('.login-forget').click(function () {
+            onClose();
             window.forget = parent.layer.open({
                 type: 2,
                 skin: 'phone-dialog-cs',

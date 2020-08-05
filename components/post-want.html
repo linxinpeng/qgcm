@@ -89,13 +89,16 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">相关照片</label>
                     <div class="layui-input-block">
-                        <div class="layui-upload-drag" id="test10">
-                            <i class="layui-icon"></i>
-                            <p>上传照片</p>
-                            <div class="layui-hide" id="uploadDemoView">
-                                <hr>
-                                <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                        <div style="display: flex;align-items: center;">
+                            <div class="layui-upload-drag" id="test10">
+                                <i class="layui-icon"></i>
+                                <p>上传照片</p>
+                                <div class="layui-hide" id="uploadDemoView">
+                                    <hr>
+                                    <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                </div>
                             </div>
+                            <div id="demo2" style="display:flex;align-items: center;"></div>
                         </div>
                         <p class="upload-desc">（支持.jpg/.png 格式，最多3张，图中不能带有联系方式,不能超过200kb)</p>
                     </div>
@@ -124,7 +127,7 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label required"></label>
+                    <label class="layui-form-label"></label>
                     <div class="layui-input-block post-btns">
                         <div class="post-btn-submit" style="background:#1BBC9C;color: #fff;">确认发布</div>
                         <div class="post-btn-save">保存</div>
@@ -175,6 +178,22 @@
             var form = layui.form;
             var upload = layui.upload;
             var laydate = layui.laydate;
+
+               //多图片上传
+               upload.render({
+                    elem: '#test10'
+                    , url: 'https://httpbin.org/post' //改成您自己的上传接口
+                    , multiple: true
+                    , before: function (obj) {
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function (index, file, result) {
+                            $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        });
+                    }
+                    , done: function (res) {
+                        //上传完毕
+                    }
+                });
 
             //常规用法
             laydate.render({

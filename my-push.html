@@ -31,7 +31,7 @@
                             <p>我需要百度大搜框架，消毒品特化，有的联系我。</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -47,7 +47,7 @@
                                 整形，家装，建材，游戏，旅游，流量卡，APP下载，海鲜，茶叶，收</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -62,7 +62,7 @@
                             <p>我需要百度大搜框架，消毒品特化，有的联系我。</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -77,7 +77,7 @@
                             <p>我需要百度大搜框架，消毒品特化，有的联系我。</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -92,7 +92,7 @@
                             <p>我需要百度大搜框架，消毒品特化，有的联系我。</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -107,7 +107,7 @@
                             <p>我需要百度大搜框架，消毒品特化，有的联系我。</p>
                         </div>
                         <div class="push-box__item-btns">
-                            <button class="primary" style="background-color: #3BB79C;color: #fff;">修改</button>
+                            <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
                             <button class="primary">刷新</button>
                             <button class="primary">下线</button>
                         </div>
@@ -140,6 +140,10 @@
                     let el = $(this).next('.nav-cont')
                     el.slideToggle();
                     $(this).children('.nav-arrow-up').toggleClass('nav-arrow-down')
+                })
+
+                $('.update-cont').off('click').on('click',function(){
+                    location.href = "./push-need.html"
                 })
 
                 //设置样式

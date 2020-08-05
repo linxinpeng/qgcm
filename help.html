@@ -428,8 +428,24 @@
     <script src="/js/lib/layui/layui.js"></script>
     <script>
         $(function () {
-            layui.use('element', function () {
+            layui.use(['element', 'upload'], function () {
                 var element = layui.element;
+                var upload = layui.upload;
+                //图片上传
+                upload.render({
+                    elem: '#test10'
+                    , url: 'https://httpbin.org/post' //改成您自己的上传接口
+                    , multiple: true
+                    , before: function (obj) {
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function (index, file, result) {
+                            $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        });
+                    }
+                    , done: function (res) {
+                        //上传完毕
+                    }
+                });
                 //定义当前nav点击项
                 let currentTarget = getQueryVariable('current') || 1;
 
@@ -438,14 +454,14 @@
                     $(this).next('.collapse-cont').slideToggle()
                 })
 
-                currentTarget == 6&&$('.help-box__unok').addClass('is-none')
+                currentTarget == 6 && $('.help-box__unok').addClass('is-none')
                 //左侧导航栏点击事件
                 $('.nav-item', '.page-nav').on('click', function () {
                     let title = $(this).data('target')
                     if (!title || currentTarget === title) return;
                     currentTarget = title;
                     setNavStyle.call(this)
-                    currentTarget == 6?$('.help-box__unok').addClass('is-none'):$('.help-box__unok').removeClass('is-none')
+                    currentTarget == 6 ? $('.help-box__unok').addClass('is-none') : $('.help-box__unok').removeClass('is-none')
                     $('.content-box').each(function () {
                         if ($(this).data('target') == currentTarget) {
                             $(this).removeClass('is-none').siblings('.content-box').addClass('is-none')
@@ -453,18 +469,18 @@
                     })
                     // $(`#${currentTarget}`).addClass('is-block').siblings().removeClass('is-block')
                 })
-                $('.content-box').each(function(){
-                    if(currentTarget == $(this).data('target')){
+                $('.content-box').each(function () {
+                    if (currentTarget == $(this).data('target')) {
                         $(this).removeClass('is-none').siblings('.content-box').addClass('is-none')
                     }
                 })
 
-                $('.send-feedback').off('click').on('click',function(){
-                    location.href="./help.html?current=6"
+                $('.send-feedback').off('click').on('click', function () {
+                    location.href = "./help.html?current=6"
                 })
-                $('.nav-item').each(function(){
+                $('.nav-item').each(function () {
                     $(this).removeClass('nav-item-active')
-                    if(currentTarget == $(this).data('target')){
+                    if (currentTarget == $(this).data('target')) {
                         $(this).addClass('nav-item-active')
                     }
                 })
