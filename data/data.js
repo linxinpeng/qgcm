@@ -1,6 +1,12 @@
 let data = {
+    // status 1: 置顶 2： 提供 3： 需要
     goodList:[
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -15,6 +21,11 @@ let data = {
             }
         },
         {
+            status:[3],
+            others:[
+                '/images/qyicon.png',
+                '/images/v2.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -29,6 +40,11 @@ let data = {
             }
         },
         {
+            status:[2],
+            others:[
+                '/images/qyicon.png',
+                '/images/v3.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -43,6 +59,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/s1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -57,6 +78,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/s2.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -71,6 +97,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -85,6 +116,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -99,6 +135,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -113,6 +154,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -127,6 +173,11 @@ let data = {
             }
         },
         {
+            status:[1,2],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -141,6 +192,11 @@ let data = {
             }
         },
         {
+            status:[1],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],
@@ -155,6 +211,11 @@ let data = {
             }
         },
         {
+            status:[1],
+            others:[
+                '/images/qyicon.png',
+                '/images/V1.png'
+            ],
             userImg: 'images/user.jpg',
             name:'王大全',
             tag: ['商务','广州'],

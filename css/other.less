@@ -908,7 +908,7 @@
                     font-size:14px;
                     font-weight:500;
                     color:rgba(51,51,51,1);
-                    img{
+                    img.head-icon{
                         width:32px;
                         height:32px;
                         border-radius: 50%;
@@ -919,8 +919,8 @@
                         border-left: 1px solid #ccc;
                         margin-left: 6px;
                     }
-                    img.first-version{
-                        width: 56px;
+                    img{
+                        width: 16px;
                         height: auto;
                         margin-left: 7px;
                     }
@@ -942,11 +942,35 @@
             .first-box-cont{
                 padding:20px 25px;
                 border-bottom: 1px solid #EEEEEE;
+                position: relative;
+                overflow: hidden;
+                .record{
+                    position: absolute;
+                    top: 10px;
+                    right: -30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100px;
+                    color: #fff;
+                    background-color: #F56C6C;
+                    transform: rotate(45deg);
+                }
                 h4{
                     font-size:20px;
                     font-weight:600;
                     color:rgba(51,51,51,1);
                     margin-bottom: 12px;
+                    span{
+                        float: left;
+                        padding: 1px 6px;
+                        color: #fff;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        margin-right: 16px;
+                        background-color: #409EFF;
+                        margin-top: 4px;
+                    }
                 }
                 p{
                     font-size:14px;

@@ -30,7 +30,7 @@
     <div class="search-list__list">
         <div class="search-list__list-content">
             <div class="search-list__list-header">
-                <span class="w200">姓名</span>
+                <span class="w250">姓名</span>
                 <span class="w250">公司</span>
                 <span class="w370">介绍</span>
                 <span class="w200">操作</span>
@@ -66,16 +66,26 @@
                 //获取要渲染的元素
                 const el = $('#search-list__cont');
                 //定义模板
-                let html = data.goodList.map(v => {
+                let html = data.goodList.map((v,idx) => {
                     return `
                 <div class="table-box">
                     <div class="table-row">
-                        <div class="w200 table-col">
+                        ${idx == 0?'<div class="record">推荐</div>':''}
+                        <div class="w250 table-col">
+                            <div class="head-status">
+                                ${v.status.map(v =>{
+                                    return `<span style="background:${v == 1?'#F56C6C': v == 2?'#67C23A':'#409EFF'}">${v == 1?'置顶':v == 2?'提供':'需要'}</span>`
+                                }).join('')}    
+                            </div>
                             <div class="head-portrait">
                                 <img class="user-header" src="${v.userImg}" />
                             </div>
                             <div class="user-info">
-                                <h3>${v.name}</h3>
+                                <h3>${v.name}
+                                    ${v.others.map(v =>{
+                                        return `<img src="${v}" />` 
+                                    }).join('')}    
+                                </h3>
                                 <div class="user-tag">
                                     ${v.tag.map(tag => {
                         return `<span>${tag}</span>`
