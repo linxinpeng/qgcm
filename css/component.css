@@ -186,9 +186,6 @@ html {
   justify-content: center;
   cursor: pointer;
 }
-.login .login-icon span img {
-  width: 28px;
-}
 .login .login-wechat .wechat-title {
   display: flex;
   align-items: center;
