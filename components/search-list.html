@@ -47,44 +47,57 @@
 <script>
     $(function () {
         layui.use(['laypage', 'layer'], function () {
-            
+
             var laypage = layui.laypage
                 , layer = layui.layer;
 
-            $('#search-input').on('focus',function(){
+            $('#search-input').on('focus', function () {
                 $(this).parent('.ipt-box').addClass('ipt-box-active')
             })
-            $('#search-input').on('blur',function(){
+            $('#search-input').on('blur', function () {
                 $(this).parent('.ipt-box').removeClass('ipt-box-active')
             })
 
-            $('.send-btn').off('click').on('click',function(){
-                location.href="./push-need.html"
+            $('.send-btn').off('click').on('click', function () {
+                location.href = "./push-need.html"
             })
+
+            //调用后台接口数据
+            $.ajax({
+                url: "/data/data.json", //json文件位置
+                type: "GET", //请求方式为get
+                dataType: "json", //返回数据格式为json
+                success: function (data) { //请求成功完成后要执行的方法 
+                    //创建HTML
+                    init(data)
+                }
+            })
+
             //循环遍历数组  渲染列表DOM
-            ; (function () {
+            function init(testData) {
+                console.log(testData)
                 //获取要渲染的元素
                 const el = $('#search-list__cont');
                 //定义模板
-                let html = data.goodList.map((v,idx) => {
+                let html = data.goodList.map((v, idx) => {
                     return `
                 <div class="table-box">
                     <div class="table-row">
-                        ${idx == 0?'<div class="record">推荐</div>':''}
+                        ${idx == 0 ? '<div class="record">推荐</div>' : ''}
                         <div class="w250 table-col">
                             <div class="head-status">
-                                ${v.status.map(v =>{
-                                    return `<span style="background:${v == 1?'#F56C6C': v == 2?'#67C23A':'#409EFF'}">${v == 1?'置顶':v == 2?'提供':'需要'}</span>`
-                                }).join('')}    
+                                ${v.status.map(v => {
+                        return `<span style="background:${v == 1 ? '#F56C6C' : v == 2 ? '#67C23A' : '#409EFF'}">${v == 1 ? '置顶' : v == 2 ? '提供' : '需要'}</span>`
+                    }).join('')}    
                             </div>
                             <div class="head-portrait">
                                 <img class="user-header" src="${v.userImg}" />
                             </div>
                             <div class="user-info">
                                 <h3>${v.name}
-                                    ${v.others.map(v =>{
-                                        return `<img src="${v}" />` 
-                                    }).join('')}    
+                                    ${v.others.map(v => {
+                        return `<img src="${v}" />`
+                    }).join('')}    
                                 </h3>
                                 <div class="user-tag">
                                     ${v.tag.map(tag => {
@@ -145,7 +158,7 @@
                 }).join('')
                 // 清空dom元素 添加模板
                 el.empty().append(html)
-            })()
+            }
 
             //查看信息按钮事件
             $('.show-btn').click(function () {
@@ -158,19 +171,19 @@
             //初始化页面page
             laypage.render({
                 elem: 'search-page',
-                prev:'<img src="/images/prev.png" style="width: 14px;"/>',
+                prev: '<img src="/images/prev.png" style="width: 14px;"/>',
                 next: '<img src="/images/next.png" style="width: 14px;"/>'
                 , count: 100
                 , layout: ['count', 'prev', 'page', 'next', 'skip']
                 , jump: function (obj) {
                     console.log(obj)
                 },
-                
+
             });
 
-            setTimeout(()=>{
-                $('.search-list').css('display','block')
-            },100)
+            setTimeout(() => {
+                $('.search-list').css('display', 'block')
+            }, 100)
         })
     })
 </script>
