@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
     <link rel="stylesheet" href="/css/other.css">
+    <link rel="stylesheet" href="/css/search-list.css">
 </head>
 
 <body style="display: none;">
@@ -46,21 +47,917 @@
                 </div>
             </div>
         </div>
-        <div id="search-box"></div>
+        <div id="search-box">
+            <div class="search-list" style="display: block;">
+                <div class="search-list__header">
+                    <div class="search-list__header-inner">
+                        <div class="search-list__header-top">
+                            <div class="ipt-box">
+                                <img src="/images/search.png">
+                                <input id="search-input" type="text" placeholder="请输入公司名称/姓名/地区/资源关键字">
+                                <button type="button" class="layui-btn layui-btn-radius search-btn">搜索</button>
+                            </div>
+                            <button type="button"
+                                class="layui-btn layui-btn-radius layui-btn-normal send-btn">发布需求</button>
+                        </div>
+                        <div class="search-list__header-hot">
+                            <label>热门搜索：</label>
+                            <span><img src="/images/hot.png">销售渠道</span>
+                            <span><img src="/images/hot.png">优质货源</span>
+                            <span><img src="/images/hot.png">推广甲方</span>
+                            <span>效果渠道</span>
+                            <span>招商加盟</span>
+                            <span>资源互换</span>
+                            <span>流量互换</span>
+                            <span>采购需求</span>
+                            <span>线下广告</span>
+                            <span>实体广告</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-list__list">
+                    <div class="search-list__list-content">
+                        <div class="search-list__list-header">
+                            <span class="w250">姓名</span>
+                            <span class="w250">公司</span>
+                            <span class="w370">介绍</span>
+                            <span class="w200">操作</span>
+                            <span class="f1">发布时间</span>
+                        </div>
+                        <div class="search-list__list-table" id="search-list__cont">
+                            <div class="table-box">
+                                <div class="table-row">
+                                    <div class="record">推荐</div>
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2小时前
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#409EFF">需要</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/v2.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        15分钟前
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>123234245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资商品资源商品资源商品资源源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>商商品资源商品资源品资源</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/v3.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        刚刚
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/s1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/s2.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span><span
+                                                style="background:#67C23A">提供</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-box">
+                                <div class="table-row">
+
+                                    <div class="w250 table-col">
+                                        <div class="head-status">
+                                            <span style="background:#F56C6C">置顶</span>
+                                        </div>
+                                        <div class="head-portrait">
+                                            <img class="user-header" src="images/user.jpg">
+                                        </div>
+                                        <div class="user-info">
+                                            <h3>王大全
+                                                <img src="/images/qyicon.png"><img src="/images/V1.png">
+                                            </h3>
+                                            <div class="user-tag">
+                                                <span>商务</span><span>广州</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w250 table-col">
+                                        青岛海米有限公司
+                                    </div>
+                                    <div class="w370 table-col ellips2">
+                                        专注供应链带货合作。我能提供的：国内外优质工厂祸患，上百种可以合作的卖货啊啥的产品
+                                    </div>
+                                    <div class="w200 table-col">
+                                        <button type="button"
+                                            class="layui-btn layui-btn-radius show-btn">查看联系方式</button>
+                                    </div>
+                                    <div class="f1 table-col" style="color:#828898;">
+                                        2020.06.12
+                                    </div>
+                                </div>
+                                <div class="table-box--slide">
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/wechat.png">
+                                                <label>微信号：</label>
+                                            </div>
+                                            <p>372374245</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/zy.png">
+                                                <label>资源类型：</label>
+                                            </div>
+                                            <p>商品资源</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide-row">
+                                        <div class="slide-row--col1">
+                                            <div class="icon">
+                                                <img src="/images/phone.png">
+                                                <label>手机号：</label>
+                                            </div>
+                                            <p>15937482323</p>
+                                        </div>
+                                        <div class="slide-row--col2">
+                                            <div class="icon">
+                                                <img src="/images/accout.png">
+                                                <label>账号类型：</label>
+                                            </div>
+                                            <p>服装</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-list__list-page">
+                        <div id="search-page">
+                            <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1"><span
+                                    class="layui-laypage-count">共 100 条</span><a href="javascript:;"
+                                    class="layui-laypage-prev layui-disabled" data-page="0"><img src="/images/prev.png"
+                                        style="width: 14px;"></a><span class="layui-laypage-curr"><em
+                                        class="layui-laypage-em"></em><em>1</em></span><a href="javascript:;"
+                                    data-page="2">2</a><a href="javascript:;" data-page="3">3</a><a href="javascript:;"
+                                    data-page="4">4</a><a href="javascript:;" data-page="5">5</a><span
+                                    class="layui-laypage-spr">…</span><a href="javascript:;" class="layui-laypage-last"
+                                    title="尾页" data-page="10">10</a><a href="javascript:;" class="layui-laypage-next"
+                                    data-page="2"><img src="/images/next.png" style="width: 14px;"></a><span
+                                    class="layui-laypage-skip">到第<input type="text" min="1" value="1"
+                                        class="layui-input">页<button type="button"
+                                        class="layui-laypage-btn">确定</button></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- 页面底部 -->
     <div id="page-footer"></div>
     <script src="/js/lib/jquery.min.js"></script>
     <script src="/js/lib/layui/layui.js"></script>
     <script src="/data/data.js"></script>
+    <script src="/js/search-list.js"></script>
     <script>
         $(function () {
             layui.use(['laypage', 'layer', 'form'], function () {
                 var laypage = layui.laypage
-                    , layer = layui.layer;
+                    , layer = layui.layer,
+                    form = layui.form
 
 
-                
+
                 var pageId = location.search.includes('type=2') ? 2 : 1
                 $($('span', '.release-tabs-header')[pageId - 1]).addClass('tab-active').siblings().removeClass('tab-active')
                 // $('span', '.release-tabs-header')[pageId - 1]
@@ -89,10 +986,16 @@
                     })
                     $(el).empty().append(html)
                 }
+
+
                 //tab切换事件
                 $('span', '.release-tabs-header').on('click', function () {
                     $(this).addClass('tab-active').siblings().removeClass('tab-active');
                 })
+                form.on('select', function (data) {
+                    //alert(data.value);
+                    filters.push(data.value);
+                });
                 //tag点击事件
                 $('span', '.release-options').on('click', function () {
                     let option = $(this).text();
@@ -103,9 +1006,8 @@
                         return
                     }
                     filters.push(option)
+                    console.log(filters)
                 })
-                //加载搜索列表
-                $('#search-box').load('/components/search-list.html')
                 //加载头部
                 $('#page-header').load('/layout/header.html')
                 //加载底部

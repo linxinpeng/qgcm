@@ -161,7 +161,7 @@
             }
 
             //查看信息按钮事件
-            $('.show-btn').click(function () {
+            $('.search-list').undelegate('.show-btn', 'click').delegate('.show-btn', 'click', function () {
                 //获取当前点击的盒子DOM
                 const el = $(this).closest('.table-box')
                 //移除所有的激活项  只激活当前的box
