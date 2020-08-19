@@ -178,14 +178,10 @@
 .menber-cont .menber-cont__block-qy-item .qy__top {
   width: 100px;
   height: 100px;
-  border: 1px solid #e3c095;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.menber-cont .menber-cont__block-qy-item .qy__top img {
-  width: 48px;
 }
 .menber-cont .menber-cont__block-qy-item .qy__top-five {
   width: 178px;
@@ -255,13 +251,13 @@
 }
 .menber-cont .menber-cont__block-vip .__vip-cont .__vip-cont-item .__vip-tag span {
   display: inline-block;
-  width: 110px;
-  height: 29px;
+  width: 92px;
+  height: 23px;
   background-color: #4C4C4C;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   color: #eed5a9;
-  line-height: 29px;
+  line-height: 23px;
   text-align: center;
 }
 .menber-cont .menber-cont__block-vip .__vip-cont .__vip-cont-item .__vip-cont-item-money {
