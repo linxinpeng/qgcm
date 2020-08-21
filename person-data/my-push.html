@@ -1,4 +1,4 @@
-<div class="page-cont" style="padding: 40px 60px;border-right: 1px solid #F2F2F2;border-bottom: 1px solid #F2F2F2;">
+<div class="page-cont" style="height: 100%; padding: 40px 60px;border-right: 1px solid #F2F2F2;border-bottom: 1px solid #F2F2F2;">
     <div class="push-box">
         <div class="push-box__item">
             <div class="push-box__item-left">
@@ -11,8 +11,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
         <div class="push-box__item">
@@ -27,8 +27,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
         <div class="push-box__item">
@@ -42,8 +42,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
         <div class="push-box__item">
@@ -57,8 +57,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
         <div class="push-box__item">
@@ -72,8 +72,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
         <div class="push-box__item">
@@ -87,8 +87,8 @@
             </div>
             <div class="push-box__item-btns">
                 <button class="primary update-cont" style="background-color: #3BB79C;color: #fff;">修改</button>
-                <button class="primary">刷新</button>
-                <button class="primary">下线</button>
+                <button class="primary refresh-cont">刷新</button>
+                <button class="primary offline">下线</button>
             </div>
         </div>
     </div>
@@ -98,12 +98,21 @@
     $(function () {
         layui.use('element', function () {
             var element = layui.element;
-            
+            //修改信息
             $('.update-cont').click(function(){
                 $('#loadCenterContent').load('/person-data/post-want.html');
                 //移除所有激活状态
                 $('.nav-item-active').removeClass('nav-item-active');
                 $('#nav li').eq(2).children('.nav-item').addClass('nav-item-active')
+            })
+            //刷新
+            $('.refresh-cont').off('click').on('click',function(){
+                location.href = "./personal-data.html?my-push"
+            })
+            //下线
+            $('.offline').off('click').on('click',function(){
+                //dosome
+                console.log('oin')
             })
         })
     })

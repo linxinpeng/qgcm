@@ -341,18 +341,40 @@
   color: #333333;
 }
 .personal-data--info__right .personal-data--info-other div img {
-  width: 12px;
   margin-right: 12px;
   display: block;
 }
 .personal-data--info__right .personal-data--info-other div:last-child {
   margin-bottom: 0;
 }
+.personal-data--info__right .personal-data--info-other2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.personal-data--info__right .personal-data--info-other2 button {
+  width: 123px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 10px;
+  background: #1bbc9c;
+  border-radius: 19px;
+}
+.personal-data--info__right .personal-data--info-other2 button img {
+  margin-right: 4px;
+}
 .personal-data--info__right .personal-data--info-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
 }
 .personal-data--info__right .personal-data--info-card p {
   font-size: 12px;
@@ -399,9 +421,6 @@
 .personal-data .personal-data-content .layui-tab-content .szd .szd-item {
   width: 144px;
   margin-right: 10px;
-}
-.personal-data .personal-data-content .layui-tab-content .szgs {
-  width: 250px;
 }
 .personal-data .personal-data-content .layui-tab-content .w175 {
   width: 175px;

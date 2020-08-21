@@ -127,3 +127,6 @@ span.tag{
     color:rgba(255,255,255,1);
     border-radius: 4px;
 }
+.w300{
+    width: 300px;
+}

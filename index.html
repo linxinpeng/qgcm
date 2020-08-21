@@ -124,7 +124,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -193,7 +193,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -262,7 +262,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -332,7 +332,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -402,7 +402,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -472,7 +472,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -542,7 +542,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -612,7 +612,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -682,7 +682,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -752,7 +752,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -821,7 +821,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -890,7 +890,7 @@
                                     <div class="slide-row">
                                         <div class="slide-row--col1">
                                             <div class="icon">
-                                                <img src="/images/phone.png">
+                                                <img src="/images/ls-phone.png">
                                                 <label>手机号：</label>
                                             </div>
                                             <p>15937482323</p>
@@ -908,7 +908,7 @@
                         </div>
                     </div>
                     <div class="search-list__list-page">
-                        <div id="home-page-box"></div>
+                        <div id="search-page"></div>
                     </div>
                 </div>
             </div>
@@ -927,9 +927,11 @@
 
                 //分页跳转功能
                 laypage.render({
-                    elem: 'home-page-box'
-                    , count: 100
-                    , layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+                    elem: 'search-page'
+                    , count: 100,
+                    prev: '<img src="/images/prev.png" style="width: 14px;"/>',
+                    next: '<img src="/images/next.png" style="width: 14px;"/>'
+                    , layout: ['count', 'prev', 'page', 'next', 'skip']
                     , jump: function (obj) { //分页跳转  obj 跳转结果
                         console.log(obj)
                     }

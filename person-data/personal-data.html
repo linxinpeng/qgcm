@@ -13,19 +13,23 @@
             </div>
         </div>
         <div class="personal-data--info__right">
-            <div class="personal-data--info-other">
+            <div class="personal-data--info-other is-none">
                 <div>
-                    <img src="/images/phone-number.png" />
+                    <img src="/images/dianh.png" />
                     1593***2455
                 </div>
                 <div>
-                    <img src="/images/house.png" />
+                    <img src="/images/gsrz.png" />
                     厦门青瓜传媒信息科技有限公司
                 </div>
                 <div>
-                    <img src="/images/cc-card.png" />
+                    <img src="/images/cc-card.png" style="width: 21px;"/>
                     商务部 总监
                 </div>
+            </div>
+            <div class="personal-data--info-other2">
+                <p>您还没有完善青瓜名片哦～</p>
+                <button class="edit-zl"><img src="/images/bj.png" />编辑资料</button>
             </div>
             <div class="personal-data--info-card">
                 <img src="/images/qrcode2.png" />
@@ -95,28 +99,28 @@
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label required">所在公司</label>
-                            <div class="layui-input-block szgs">
+                            <div class="layui-input-block szgs w300">
                                 <input type="text" name="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入公司名称" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label required">姓名</label>
-                            <div class="layui-input-block w175">
+                            <div class="layui-input-block w300">
                                 <input type="text" name="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入姓名" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label required">所在部门</label>
-                            <div class="layui-input-block w175">
+                            <div class="layui-input-block w300">
                                 <input type="text" name="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入所在部门" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label required">职位</label>
-                            <div class="layui-input-block w175">
+                            <div class="layui-input-block w300">
                                 <input type="text" name="title" lay-verify="title" autocomplete="off"
                                     placeholder="请输入职位" class="layui-input">
                             </div>
@@ -253,6 +257,12 @@
                     position_class:'toast-top-right',
                     stack: true
                 })
+            })
+
+            //编辑资料
+            $('.edit-zl').off('click').on('click',function(){
+                $('.personal-data--info-other2').addClass('is-none');
+                $('.personal-data--info-other').removeClass('is-none')
             })
 
             //设置默认的tab
