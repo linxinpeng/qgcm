@@ -1,0 +1,283 @@
+
+    <div class="page-cont">
+        <div class="company-in dialog-box">
+            <div class="company-desc">
+                <h3>轻松3步入驻青瓜通，成为我们的合作伙伴</h3>
+                <p>温馨提示：请根据公司实际业务选择模板，否则会被拖入回收站哦~</p>
+            </div>
+            <div class="steps">
+                <div class="step step-active" data-step="1">
+                    <span class="step-number">1</span>
+                    <img src="images/check2.png" />
+                    <p>选择模板</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <img src="images/check2.png" />
+                    <p>公司信息</p>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <img src="images/check2.png" />
+                    <p>联系信息</p>
+                </div>
+            </div>
+            <div class="company-cont">
+                <div class="company-step-one company-step" data-step="1">
+                    <div class="company-modal">
+                        <div class="modal-box modal-box-active">
+                            <div class="modal-left">
+                                <h3>品牌企业（甲方）</h3>
+                                <p>具有自主品牌的企业</p>
+                                <p>如传统企业、互联网公司等</p>
+                            </div>
+                            <div class="modal-right">
+                                <img src="images/first.png" />
+                            </div>
+                        </div>
+                        <div class="modal-box">
+                            <div class="modal-left">
+                                <h3>营销供应商（乙方）</h3>
+                                <p>提供营销服务的机构,</p>
+                                <p>如广告、媒体、公关、会展、技术等</p>
+                            </div>
+                            <div class="modal-right">
+                                <img src="images/scend.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-btn-next" data-step="1">
+                        下一步
+                    </div>
+                </div>
+                <div class="company-step-two company-step is-none" data-step="2">
+                    <form class="layui-form" action="">
+                        <div class="layui-form-item w550">
+                            <label class="layui-form-label required">公司简称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请输入希望加入的公司简称或品牌名称，如：青瓜传媒" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item w550">
+                            <label class="layui-form-label required">公司全称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请填写公司营业执照的注册名称，如：厦门青瓜信息科技有限公司" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">所属行业</label>
+                            <div class="layui-input-block w250">
+                                <select name="quiz1">
+                                    <option value="">请选择省</option>
+                                    <option value="浙江" selected="">浙江省</option>
+                                    <option value="你的工号">江西省</option>
+                                    <option value="你最喜欢的老师">福建省</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">公司所在地</label>
+                            <div class="layui-input-block">
+                                <div class="select-item">
+                                    <select name="quiz1">
+                                        <option value="">请选择省</option>
+                                        <option value="浙江" selected="">浙江省</option>
+                                        <option value="你的工号">江西省</option>
+                                        <option value="你最喜欢的老师">福建省</option>
+                                    </select>
+                                </div>
+                                <div class="select-item">
+                                    <select name="quiz1">
+                                        <option value="">请选择省</option>
+                                        <option value="浙江" selected="">浙江省</option>
+                                        <option value="你的工号">江西省</option>
+                                        <option value="你最喜欢的老师">福建省</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item w550">
+                            <label class="layui-form-label">详细地址</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请填写" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item w550">
+                            <label class="layui-form-label">公司网址</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    placeholder="请填写" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label required">需求描述</label>
+                            <div class="layui-input-block">
+                                <textarea placeholder="为了提高合作对接的效率，请尽可能详细描述您的需求，包括但不限于项目背景、当前问题、其他个性化需求等。500字以内"
+                                    class="layui-textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">相关照片</label>
+                            <div class="layui-input-block">
+                                <div style="display: flex;align-items: center;">
+                                    <div class="layui-upload-drag" id="test10">
+                                        <i class="layui-icon"></i>
+                                        <p>上传照片</p>
+                                        <div class="layui-hide" id="uploadDemoView">
+                                            <hr>
+                                            <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                        </div>
+                                    </div>
+                                    <div id="demo2" style="display: flex;align-items: center;"></div>
+                                </div>
+                                <p class="upload-desc">（支持.jpg/.png 格式，最多3张，图中不能带有联系方式,不能超过200kb)</p>
+                            </div>
+                        </div>
+                        <div class="modal-btn-next" data-step="2">下一步</div>
+                    </form>
+                </div>
+                <div class="company-step-three company-step is-none" data-step="3">
+                    <div class="contact">
+                        <div class="join-company" style="margin-bottom: 64px;">
+                            <h3 class="green-bor-title" style="margin-bottom: 20px;">加入公司</h3>
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item w550">
+                                    <label class="layui-form-label required">公司简称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="请输入" class="layui-input">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="contact-info">
+                            <h3 class="green-bor-title" style="margin-bottom: 20px;">联系信息</h3>
+                            <form class="layui-form" action="">
+                                <div class="layui-form-item ">
+                                    <label class="layui-form-label required">姓名</label>
+                                    <div class="layui-input-block w175">
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="请输入" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item  ">
+                                    <label class="layui-form-label required">所在部门</label>
+                                    <div class="layui-input-block w175">
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="请输入" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item  ">
+                                    <label class="layui-form-label required">职位</label>
+                                    <div class="layui-input-block w175">
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="请输入" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item  ">
+                                    <label class="layui-form-label required">手机号码</label>
+                                    <div class="layui-input-block w175">
+                                        <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            placeholder="请输入" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label required">联系方式</label>
+                                    <div class="layui-input-block lxfs-box" style="width: 565px;">
+                                        <div class="lxfs">
+
+                                            <div class="lxfs-item">
+                                                <img src="/images/wechat.png" />
+                                                <input type="text" name="title" lay-verify="title"
+                                                    autocomplete="off" placeholder="微信" class="layui-input">
+                                            </div>
+                                            <div class="lxfs-item">
+                                                <img src="/images/qq.png" />
+                                                <input type="text" name="title" lay-verify="title"
+                                                    autocomplete="off" placeholder="QQ"" class=" layui-input">
+                                            </div>
+                                            <div class="lxfs-item">
+                                                <img src="/images/email.png" />
+                                                <input type="text" name="title" lay-verify="title"
+                                                    autocomplete="off" placeholder="电子邮箱" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-btn-next" data-step="last">确认提交</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            layui.use(['form', 'upload'], function () {
+                var form = layui.form;
+                var upload = layui.upload;
+                //下一步按钮点击
+                // $('body').undelegate('.modal-btn-next','click').delegate('.modal-btn-next','click',function(){
+                    
+                // })
+                $('.modal-btn-next').on('click', function () {
+                    console.log('in')
+                    let step = $(this).data('step')
+                    if (step !== 'last') {
+                        doShowContanier(step)
+                    }
+                    setSteps(step)
+                })
+
+                //控制显示隐藏当前第几部
+                function doShowContanier(step) {
+                    $('.company-step').each(function () {
+                        let idx = $(this).data('step')
+                        $(this).addClass('is-none')
+                        if (idx === step + 1) {
+                            $(this).removeClass('is-none')
+                        }
+                    })
+                }
+
+                //控制顶上步骤条
+                function setSteps(step) {
+                    $('.step', '.steps').each(function () {
+                        let idx = $(this).data('step');
+                        step = step === 'last' ? 3 : step
+                        step === idx && $(this).addClass('has-active')
+                        if (step !== 3)
+                            step + 1 === idx && $(this).addClass('step-active')
+                    })
+                }
+                //多图片上传
+                upload.render({
+                    elem: '#test10'
+                    , url: 'https://httpbin.org/post' //改成您自己的上传接口
+                    , multiple: true
+                    , before: function (obj) {
+                        //预读本地文件示例，不支持ie8
+                        obj.preview(function (index, file, result) {
+                            $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        });
+                    }
+                    , done: function (res) {
+                        //上传完毕
+                    }
+                });
+
+                //选择品牌
+                $('.modal-box', '.company-cont').on('click', function () {
+                    $(this).addClass('modal-box-active').siblings().removeClass('modal-box-active')
+                })
+                form.render('select')
+
+            })
+        })
+    </script>

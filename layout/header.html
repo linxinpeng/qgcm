@@ -22,26 +22,26 @@
                         <p class="update-vip">升级会员></p>
                         <p class="admin-vip">豪华商业版会员</p>
                     </div>
-                    <ul>
-                        <a href="/personal-data.html">
-                            <li>个人资料</li>
+                    <ul id="vip-list-option">
+                        <a href="javascript:void(0)" data-target="personal-data">
+                            <li>个人中心</li>
                         </a>
-                        <a href="/company-in.html">
+                        <a href="javascript:void(0)" data-target="company-in">
                             <li>公司入驻</li>
                         </a>
-                        <a href="/my-push.html">
+                        <a href="javascript:void(0)" data-target="my-push">
                             <li>我的发布</li>
                         </a>
-                        <a href="/mate.html">
+                        <a href="javascript:void(0)" data-target="mate">
                             <li>匹配合作</li>
                         </a>
-                        <a href="/company-history.html">
+                        <a href="javascript:void(0)" data-target="company-history">
                             <li>合作历史</li>
                         </a>
-                        <a href="/message-center.html">
+                        <a href="javascript:void(0)" data-target="message-center">
                             <li>消息中心<span class="layui-badge" style="border-radius: 10px;padding: 0 8px;">29</span></li>
                         </a>
-                        <a href="/keyword.html">
+                        <a href="javascript:void(0)" data-target="keyword">
                             <li>关键词订阅</li>
                         </a>
                         <li>退出登录</li>
@@ -152,6 +152,12 @@
                     closeBtn: 0,
                     content: '/components/PhoneDialog.html'
                 });
+            })
+
+            $(document).undelegate('#vip-list-option a','clcik').delegate('#vip-list-option a','click',function(){
+                // $('#loadCenterContent').load('/person-data/message-center.html');
+                let target = $(this).data('target')
+                location.href = './personal-data.html?' + target
             })
 
             setTimeout(() => {

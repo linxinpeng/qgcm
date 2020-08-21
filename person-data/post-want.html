@@ -1,5 +1,5 @@
 <div class="post-want">
-    <div class="post-edit is-none">
+    <div class="post-edit">
         <div class="post-alert">
             <img src="/images/warn2.png" />
             违规删除，违法封号！请严格按规则发布，勿投机取巧!
@@ -181,11 +181,12 @@
             var upload = layui.upload;
             var laydate = layui.laydate;
 
-
-            $('.post-btn-submit').off('click').on('click',function(){
-                console.log('in')
+            $('.post-btn-submit').off('click').on('click', function () {
                 $('.post-edit').addClass('is-none');
+                //成功操作
                 $('.post-success').removeClass('is-none')
+                //失败操作
+                // $('.post-fail').removeClass('is-none')
             })
 
             //多图片上传
@@ -213,6 +214,7 @@
                 elem: '#endTime'
             });
 
+            form.render('select');
         })
     })
 </script>
