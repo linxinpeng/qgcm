@@ -160,8 +160,8 @@
   align-items: center;
 }
 .search-list__list-table .table-box .table-row .table-col .user-info h3 img {
-  width: 13px;
-  margin-left: 4px;
+  width: 14px;
+  margin-left: 6px;
 }
 .search-list__list-table .table-box .table-row .table-col .user-info .user-tag {
   display: flex;
@@ -174,7 +174,9 @@
 .search-list__list-table .table-box .table-row .table-col .show-btn {
   width: 116px;
   height: 32px;
-  background: #21caa8;
+  background: transparent;
+  border: 1px solid #21CAA8;
+  color: #21CAA8;
   border-radius: 27px;
   line-height: 32px;
 }

@@ -11,7 +11,7 @@
                     <div class="layui-input-block">
                         <div style="display:flex;align-items: center;">
                             <div style="width: 400px;">
-                                <select name="quiz1">
+                                <select name="quiz1" lay-verify="required">
                                     <option value="">请选择省</option>
                                     <option value="浙江" selected="">浙江省</option>
                                     <option value="你的工号">江西省</option>
@@ -28,14 +28,14 @@
                         <div class="nc-total">
                             <span>0</span>/20
                         </div>
-                        <input type="text" maxlength='20' name="title" lay-verify="title" autocomplete="off"
+                        <input type="text" lay-verify="title"  maxlength='20' lay-verType="tips"
                             placeholder="请输入昵称" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label required">结算方式</label>
                     <div class="layui-input-block w400">
-                        <select name="quiz1">
+                        <select name="quiz1" lay-verify="required">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -46,7 +46,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label required">付款方式</label>
                     <div class="layui-input-block w400">
-                        <select name="quiz1">
+                        <select name="quiz1" lay-verify="required">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -57,7 +57,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">所属行业</label>
                     <div class="layui-input-block w400">
-                        <select name="quiz1">
+                        <select name="quiz1" lay-verify="required">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -76,13 +76,13 @@
                     <label class="layui-form-label required">有效时间</label>
                     <div class="layui-input-block post-times">
                         <div class="post-time w175">
-                            <input type="text" placeholder="请选择日期" class="layui-input" id="startTime"
+                            <input type="text" placeholder="请选择日期" lay-verify="time" lay-verType="tips" class="layui-input" id="startTime"
                                 placeholder="yyyy-MM-dd">
                             <img src="/images/date.png" />
                         </div>
                         <span class="zhi">至</span>
                         <div class="post-time w175">
-                            <input type="text" placeholder="请选择日期" class="layui-input" id="endTime"
+                            <input type="text" placeholder="请选择日期" lay-verify="time" lay-verType="tips" class="layui-input" id="endTime"
                                 placeholder="yyyy-MM-dd">
                             <img src="/images/date.png" />
                         </div>
@@ -111,17 +111,17 @@
                         <div class="lxfs">
                             <div class="lxfs-item">
                                 <img src="..//images/wechat.png" />
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="微信"
+                                <input type="text" lay-verify="wechat" lay-verType="tips"  placeholder="微信"
                                     class="layui-input">
                             </div>
                             <div class="lxfs-item">
                                 <img src="..//images/qq.png" />
-                                <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                <input type="text" lay-verify="qq" lay-verType="tips" 
                                     placeholder="QQ"" class=" layui-input">
                             </div>
                             <div class="lxfs-item">
                                 <img src="..//images/email.png" />
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="电子邮箱"
+                                <input type="text" lay-verify="email" lay-verType="tips"  placeholder="电子邮箱"
                                     class="layui-input">
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label"></label>
                     <div class="layui-input-block post-btns">
-                        <div class="post-btn-submit" style="background:#1BBC9C;color: #fff;">确认发布</div>
+                        <div class="post-btn-submit" lay-submit lay-filter="sub" style="background:#1BBC9C;color: #fff;">确认发布</div>
                         <div class="post-btn-save">保存</div>
                     </div>
                 </div>
@@ -174,6 +174,7 @@
         </div>
     </div>
 </div>
+<script src="/js/verify.js"></script>
 <script>
     $(function () {
         layui.use(['form', 'upload', 'laydate'], function () {
@@ -181,13 +182,17 @@
             var upload = layui.upload;
             var laydate = layui.laydate;
 
-            $('.post-btn-submit').off('click').on('click', function () {
-                $('.post-edit').addClass('is-none');
-                //成功操作
-                // $('.post-success').removeClass('is-none')
-                //失败操作
-                $('.post-fail').removeClass('is-none')
-            })
+            form.on('submit(sub)', function(data){
+                console.log(data)
+            });
+
+            // $('.post-btn-submit').off('click').on('click', function () {
+            //     $('.post-edit').addClass('is-none');
+            //     //成功操作
+            //     // $('.post-success').removeClass('is-none')
+            //     //失败操作
+            //     $('.post-fail').removeClass('is-none')
+            // })
             //查看详情
             $('.show-detail').off('click').on('click',function(){
                 $('#loadCenterContent').load('/person-data/my-push.html');

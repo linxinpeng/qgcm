@@ -186,7 +186,7 @@ div.other-style .header-inner--admin--unlogin span#login::after {
   line-height: 17px;
 }
 .page-header .header-inner--admin--unvip .header-inner--admin--pop .admin--pop--head.admin-active .update-vip {
-  display: none;
+  /* display: none; */
 }
 .page-header .header-inner--admin--unvip .header-inner--admin--pop ul {
   padding: 8px 0;

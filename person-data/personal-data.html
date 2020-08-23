@@ -23,7 +23,7 @@
                     厦门青瓜传媒信息科技有限公司
                 </div>
                 <div>
-                    <img src="/images/cc-card.png" style="width: 21px;"/>
+                    <img src="/images/cc-card.png" style="width: 21px;" />
                     商务部 总监
                 </div>
             </div>
@@ -54,10 +54,12 @@
                                     <p>上传头像</p>
                                 </div>
                                 <img class="upload-show" src="/images/user.jpg" />
-                                <div id="demo2"></div>
-                                <p>（支持.jpg/.png 格式，建议尺寸200*200px，不能超过200kb)</p>
+                                <div id="demo2"
+                                    style="max-width: 100px;max-height: 100px;overflow: hidden;border-radius: 50%;">
+                                </div>
+                                <p>（支持.jpg/.png 格式，建议尺寸100*100px，不能超过200kb)</p>
                             </div>
-                           
+
                         </div>
                         <div class="layui-form-item required">
                             <label class="layui-form-label">昵称</label>
@@ -128,13 +130,16 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label required">工作证明</label>
                             <div class="layui-input-block gzzm">
-                                <div class="layui-upload-drag" id="test10">
-                                    <i class="layui-icon"></i>
-                                    <p>上传图片</p>
-                                    <div class="layui-hide" id="uploadDemoView">
-                                        <hr>
-                                        <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="layui-upload-drag" id="test10">
+                                        <i class="layui-icon"></i>
+                                        <p>上传图片</p>
+                                        <div class="layui-hide" id="uploadDemoView">
+                                            <hr>
+                                            <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                        </div>
                                     </div>
+                                    <div id="worke" style="display: inline-block;align-items: center;"></div>
                                 </div>
                                 <p>（支持.jpg/.png 格式，建议尺寸200*200px,不能超过200kb)</p>
                             </div>
@@ -156,7 +161,7 @@
                                     <div class="lxfs-item">
                                         <img src="/images/qq.png" />
                                         <input type="text" name="title" lay-verify="title" autocomplete="off"
-                                            placeholder="QQ"" class="layui-input">
+                                            placeholder="QQ"" class=" layui-input">
                                     </div>
                                     <div class="lxfs-item">
                                         <img src="/images/email.png" />
@@ -170,7 +175,8 @@
                         <div class="layui-form-item" style="padding-top: 65px;">
                             <label class="layui-form-label"></label>
                             <div class="layui-input-block w175">
-                                <button type="button" class="layui-btn update-info" style="background:#1BBC9C;">修改资料</button>
+                                <button type="button" class="layui-btn update-info"
+                                    style="background:#1BBC9C;">修改资料</button>
                             </div>
                         </div>
                     </form>
@@ -241,7 +247,7 @@
 </div>
 <script>
     $(function () {
-        layui.use(['element', 'form', 'upload','layer'], function () {
+        layui.use(['element', 'form', 'upload', 'layer'], function () {
             var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
             var form = layui.form;
             var upload = layui.upload;
@@ -250,45 +256,45 @@
                 emailIndex = null,
                 phoneIndex = null,
                 url = location.pathname;
-            
-            $('.update-info').off('click').on('click',function(){
+
+            $('.update-info').off('click').on('click', function () {
                 console.log('in')
-                $.Toast('标题','内容','success',{
-                    position_class:'toast-top-right',
+                $.Toast('标题', '内容', 'success', {
+                    position_class: 'toast-top-right',
                     stack: true
                 })
             })
 
             //编辑资料
-            $('.edit-zl').off('click').on('click',function(){
+            $('.edit-zl').off('click').on('click', function () {
                 $('.personal-data--info-other2').addClass('is-none');
                 $('.personal-data--info-other').removeClass('is-none')
             })
 
             //设置默认的tab
-            if(url.includes('personal-data')){
-                $('li.personal-data1','.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
+            if (url.includes('personal-data')) {
+                $('li.personal-data1', '.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
                 $('.personal-data-cont').addClass('layui-show').siblings().removeClass('layui-show')
-            }else{
-                $('li.safe-setting','.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
+            } else {
+                $('li.safe-setting', '.layui-tab-title').addClass('layui-this').siblings().removeClass('layui-this')
                 $('.safe-setting-cont').addClass('layui-show').siblings().removeClass('layui-show')
             }
 
             //按钮弹窗
-            $('.safe-btn').on('click',function(){
+            $('.safe-btn').on('click', function () {
                 let target = $(this).data('target');
-                if(target === 'password') openBindPassword()
-                if(target === 'email') openBindEmail()
-                if(target === 'phone') openBindPhone()
+                if (target === 'password') openBindPassword()
+                if (target === 'email') openBindEmail()
+                if (target === 'phone') openBindPhone()
 
             })
             //绑定密码弹窗
-            function openBindPassword(){
+            function openBindPassword() {
                 passwordIndex = layer.open({
-                    type: 1, 
+                    type: 1,
                     skin: 'phone-dialog-cs',
-                    title:false,
-                    closeBtn:false,
+                    title: false,
+                    closeBtn: false,
                     area: ['400px', '332px'],
                     content: `
                         <div class="dialog-box">
@@ -312,16 +318,16 @@
                                 <span class="dialog-submit">确定</span>    
                             </div>
                         </div>
-                    ` 
+                    `
                 });
             }
             //绑定邮箱弹窗
-            function openBindEmail(){
+            function openBindEmail() {
                 emailIndex = layer.open({
-                    type: 1, 
+                    type: 1,
                     skin: 'phone-dialog-cs',
-                    title:false,
-                    closeBtn:false,
+                    title: false,
+                    closeBtn: false,
                     area: ['400px', '274px'],
                     content: `
                         <div class="dialog-box">
@@ -346,16 +352,16 @@
                                 <span class="dialog-submit">确定</span>    
                             </div>
                         </div>
-                    ` 
+                    `
                 });
             }
             //绑定手机号弹窗
-            function openBindPhone(){
+            function openBindPhone() {
                 phoneIndex = layer.open({
-                    type: 1, 
+                    type: 1,
                     skin: 'phone-dialog-cs',
-                    title:false,
-                    closeBtn:false,
+                    title: false,
+                    closeBtn: false,
                     area: ['400px', '304px'],
                     content: `
                         <div class="dialog-box">
@@ -369,7 +375,7 @@
                                     156****3741
                                 </div>
                                 <div class="box-cont-item">
-                                    <input type="text"  placeholder="请输入手机号码" class="layui-input">
+                                    <input type="text"  placeholder="请输入手机号码" maxLength="11" class="layui-input">
                                 </div>
                                 <div class="box-cont-item send-ipt">
                                     <input  placeholder="请输入手机验证码" class="layui-input">
@@ -384,32 +390,32 @@
                                 <span class="dialog-submit">确定</span>    
                             </div>
                         </div>
-                    ` 
+                    `
                 });
             }
 
-             //关闭弹窗
-             $(document).undelegate('.box-close','click').delegate('.box-close','click',function(){
-               onCloseDialog(this)
+            //关闭弹窗
+            $(document).undelegate('.box-close', 'click').delegate('.box-close', 'click', function () {
+                onCloseDialog(this)
             })
             //取消按钮事件
-            $(document).undelegate('.dialog-cancel','click').delegate('.dialog-cancel','click',function(){
+            $(document).undelegate('.dialog-cancel', 'click').delegate('.dialog-cancel', 'click', function () {
                 onCloseDialog(this)
             })
 
             //关闭弹窗事件
-            function onCloseDialog(el){
+            function onCloseDialog(el) {
                 let val = $(el).data('val');
-                if(val == "password") layer.close(passwordIndex)
-                if(val == "email") layer.close(emailIndex)
-                if(val == "phone") layer.close(phoneIndex)
+                if (val == "password") layer.close(passwordIndex)
+                if (val == "email") layer.close(emailIndex)
+                if (val == "phone") layer.close(phoneIndex)
             }
 
             //昵称输入框 事件
-            $('input','.nc').on('input',function(){
-               let text = $(this).val();
-               let totalEl = $(this).prev('.nc-total')
-               totalEl.children('span').empty().append(text.length)
+            $('input', '.nc').on('input', function () {
+                let text = $(this).val();
+                let totalEl = $(this).prev('.nc-total')
+                totalEl.children('span').empty().append(text.length)
             })
 
 
@@ -420,8 +426,8 @@
                 , before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
-                        $('.upload-image').css('display','none')
-                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        $('.upload-image').css('display', 'none')
+                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="width: 100%;">')
 
                     });
                 }
@@ -438,7 +444,7 @@
                 , before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
-                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        $('#worke').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="max-width: 100px; max-height: 100px;margin-left: 10px;">')
                     });
                 }
                 , done: function (res) {
