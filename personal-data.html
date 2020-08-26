@@ -71,6 +71,18 @@
                                 <span>关键词订阅</span>
                             </div>
                         </li>
+                        <li>
+                            <div class="nav-title nav-item" data-url="first">
+                                <img src="/images/gjcdy.png" />
+                                <span>测试详情一</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-title nav-item" data-url="second">
+                                <img src="/images/gjcdy.png" />
+                                <span>测试详情二</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -117,6 +129,12 @@
                         break;
                     case 'keyword':
                         $('#loadCenterContent').load('/person-data/keyword.html');
+                        break;
+                    case 'first':
+                        $('#loadCenterContent').load('/person-data/first-party-detail.html');
+                        break;
+                    case 'second':
+                        $('#loadCenterContent').load('/person-data/second-party-detail.html');
                         break;
                 }
                 setNavStyle(this)

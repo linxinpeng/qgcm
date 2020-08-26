@@ -1,22 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+ * @Author: your name
+ * @Date: 2020-08-26 17:01:13
+ * @LastEditTime: 2020-08-26 17:02:24
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \qgcm\person-data\first-party-detail.html
+-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>青瓜平台</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
-    <link rel="stylesheet" href="/css/other.css">
-</head>
-
-<body>
-    <!-- 页面头部元素 -->
-    <div id="page-header"></div>
-    <!-- 页面容器元素 -->
-    <div class="page-container" style="padding-top: 80px;padding-bottom: 80px;background:rgba(248,249,252,1);">
-        <div class="page-flex">
-            <div id="nav"></div>
             <div class="page-cont">
                 <div class="first-out-part">
                     <div class="first-part">
@@ -70,6 +60,7 @@
                         <div class="update-vip">
                             <p>升级VIP即可免费对接该渠道服务商</p>
                             <span>升级会员</span>
+                            <span>点击查看</span>
                         </div>
                     </div>
                     <div class="first-part3">
@@ -89,20 +80,3 @@
             </div>
         </div>
     </div>
-    <!-- 页面底部 -->
-    <div id="page-footer"></div>
-    <script src="./js/lib/jquery.min.js"></script>
-    <script src="./js/lib/layui/layui.js"></script>
-    <script>
-        $(function () {
-            //加载左侧菜单
-            $('#nav').load('/layout/nav.html')
-            //加载头部
-            $('#page-header').load('/layout/header.html')
-            //加载底部
-            $('#page-footer').load('/layout/footer.html')
-        })
-    </script>
-</body>
-
-</html>
