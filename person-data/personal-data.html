@@ -54,8 +54,7 @@
                                     <p>上传头像</p>
                                 </div>
                                 <img class="upload-show" src="/images/user.jpg" />
-                                <div id="demo2"
-                                    style="max-width: 100px;max-height: 100px;overflow: hidden;border-radius: 50%;">
+                                <div id="demo2">
                                 </div>
                                 <p>（支持.jpg/.png 格式，建议尺寸100*100px，不能超过200kb)</p>
                             </div>
@@ -78,26 +77,21 @@
                                     class="layui-textarea"></textarea>
                             </div>
                         </div>
-                        <div class="layui-form-item">
+                        <div class="layui-form-item" id="area-picker">
                             <label class="layui-form-label">所在地</label>
-                            <div class="layui-input-block szd">
-                                <div class="szd-item">
-                                    <select name="city" lay-verify="">
-                                        <option value="">福建省</option>
-                                        <option value="010">海南省</option>
-                                        <option value="021">天津市</option>
-                                        <option value="0571">北京市</option>
-                                    </select>
-                                </div>
-                                <div class="szd-item">
-                                    <select name="city" lay-verify="">
-                                        <option value="">兴安</option>
-                                        <option value="010">北京</option>
-                                        <option value="021">上海</option>
-                                        <option value="0571">杭州</option>
-                                    </select>
-                                </div>
+
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="province" class="province-selector" data-value="广东省"
+                                    lay-filter="province-1">
+                                    <option value="">请选择省</option>
+                                </select>
                             </div>
+                            <div class="layui-input-inline" style="width: 200px;">
+                                <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
+                                    <option value="">请选择市</option>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="layui-form-item">
                             <label class="layui-form-label required">所在公司</label>
@@ -131,15 +125,15 @@
                             <label class="layui-form-label required">工作证明</label>
                             <div class="layui-input-block gzzm">
                                 <div style="display: flex; align-items: center;">
+
                                     <div class="layui-upload-drag" id="test10">
-                                        <i class="layui-icon"></i>
-                                        <p>上传图片</p>
+                                        <img src="/images/add.png" />
                                         <div class="layui-hide" id="uploadDemoView">
                                             <hr>
                                             <img src="" alt="上传成功后渲染" style="max-width: 196px">
                                         </div>
                                     </div>
-                                    <div id="worke" style="display: inline-block;align-items: center;"></div>
+                                    <div id="worke" style="display: flex;align-items: center;"></div>
                                 </div>
                                 <p>（支持.jpg/.png 格式，建议尺寸200*200px,不能超过200kb)</p>
                             </div>
@@ -247,18 +241,67 @@
 </div>
 <script>
     $(function () {
-        layui.use(['element', 'form', 'upload', 'layer'], function () {
+
+        //配置插件目录
+        layui.config({
+            base: './mods/'
+            , version: '1.0'
+        });
+        layui.use(['element', 'form', 'upload', 'layer', 'layarea'], function () {
             var element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
             var form = layui.form;
             var upload = layui.upload;
             var layer = layui.layer;
+            var layarea = layui.layarea;
             var passwordIndex = null,
                 emailIndex = null,
                 phoneIndex = null,
                 url = location.pathname;
+            var phoneTime = 60;
+            var phoneTimer = null;
+
+            var emailTime = 60;
+            var emailTimer = null;
+
+
+            $('body').undelegate('.email-dialog .is-send', 'click').delegate('.email-dialog .is-send', 'click', function () {
+                var $this = $(this);
+                var val = $('.email-input').val()
+                if (!val) {
+                    layer.msg('email不能为空')
+                    return
+                }
+                countDown(emailTime, emailTimer, $this)
+                layer.alert('修改成功！该弹窗只为做测试，并无实际效果')
+            })
+
+            $('body').undelegate('.phone-dialog .is-send', 'click').delegate('.phone-dialog .is-send', 'click', function () {
+                var $this = $(this);
+                var val = $('.phone-input').val()
+                if (!val) {
+                    layer.msg('phone不能为空')
+                    return
+                }
+                countDown(phoneTime, phoneTimer, $this)
+            })
+
+            function countDown(time, timer, dom) {
+                timer = setInterval(() => {
+                    time--;
+                    if (time === 0) {
+                        clearInterval(timer)
+                        time = 60;
+                        dom.text(`发送验证码`)
+                    } else {
+                        dom.text(`已发送(${time}s)`)
+                    }
+
+                }, 1000);
+            }
+
+
 
             $('.update-info').off('click').on('click', function () {
-                console.log('in')
                 $.Toast('标题', '内容', 'success', {
                     position_class: 'toast-top-right',
                     stack: true
@@ -330,20 +373,19 @@
                     closeBtn: false,
                     area: ['400px', '274px'],
                     content: `
-                        <div class="dialog-box">
+                        <div class="email-dialog dialog-box">
                             <div class="box-close" data-val="email">
                                 <img src="/images/close.png" />    
                             </div>
                             <div class="box-title">绑定邮箱账号</div>
                             <div class="box-cont">
                                 <div class="box-cont-item">
-                                    <input placeholder="请输入邮箱号码" class="layui-input">
+                                    <input placeholder="请输入邮箱号码"  class="layui-input email-input">
                                 </div>
                                 <div class="box-cont-item send-ipt">
                                     <input  placeholder="请输入邮箱验证码" class="layui-input">
                                     <div class="send-btns">
-                                        <span class="is-send is-none">发送邮件</span>
-                                        <span class="has-send ">已发送</span>
+                                        <span class="is-send">发送邮件</span>
                                     </div>
                                 </div>
                             </div>
@@ -364,7 +406,7 @@
                     closeBtn: false,
                     area: ['400px', '304px'],
                     content: `
-                        <div class="dialog-box">
+                        <div class="phone-dialog dialog-box">
                             <div class="box-close" data-val="phone">
                                 <img src="/images/close.png" />    
                             </div>
@@ -375,13 +417,12 @@
                                     156****3741
                                 </div>
                                 <div class="box-cont-item">
-                                    <input type="text"  placeholder="请输入手机号码" maxLength="11" class="layui-input">
+                                    <input type="text"  placeholder="请输入手机号码" maxLength="11" class="layui-input phone-input">
                                 </div>
                                 <div class="box-cont-item send-ipt">
                                     <input  placeholder="请输入手机验证码" class="layui-input">
                                     <div class="send-btns">
-                                        <span class="is-send is-none">发送邮件</span>
-                                        <span class="has-send ">已发送</span>
+                                        <span class="is-send">发送邮件</span>
                                     </div>
                                 </div>
                             </div>
@@ -418,7 +459,13 @@
                 totalEl.children('span').empty().append(text.length)
             })
 
-
+            layarea.render({
+                elem: '#area-picker',
+                change: function (res) {
+                    //选择结果
+                    console.log(res);
+                }
+            });
             upload.render({
                 elem: '#user-head'
                 , url: 'https://httpbin.org/post' //改成您自己的上传接口
@@ -427,7 +474,17 @@
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
                         $('.upload-image').css('display', 'none')
-                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="width: 100%;">')
+                        $('#demo2').css({
+                            width: '90px',
+                            height: '90px',
+                            overflow: 'hidden',
+                            borderRadius: '50%',
+                            display: 'flex',
+                            alignItems: 'center', 
+                            justifyContent: 'center', 
+                            border: '1px solid #eee'
+                        })
+                        $('#demo2').empty().append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="max-width: 90px;">')
 
                     });
                 }
@@ -444,13 +501,34 @@
                 , before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
-                        $('#worke').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="max-width: 100px; max-height: 100px;margin-left: 10px;">')
+                        let html = `
+                            <div class="upload-img__box">
+                                <span class="work-img-mask">
+                                    <img src="/images/delete.png" />    
+                                </span>
+                                <img src="${result}" alt="${file.name}" class="layui-upload-img" style="max-width:100%;" />
+                            </div>`
+                        $('#worke').append(html)
                     });
                 }
                 , done: function (res) {
                     //上传完毕
                 }
             });
+
+            //删除图片
+            $('#worke').undelegate('.work-img-mask', 'click').delegate('.work-img-mask', 'click', function () {
+                let targetDom = $(this).parent('.upload-img__box');
+                layer.confirm('是否删除工作证明？', {
+                    title: '提示',
+                    btn: ['确定', '取消'] //按钮
+                }, function (index) {
+                    targetDom.remove();
+                    layer.close(index)
+                }, function () {
+                    //cancel
+                });
+            })
 
         })
     })

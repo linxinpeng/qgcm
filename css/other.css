@@ -646,7 +646,8 @@
   padding-top: 60px;
   padding-bottom: 98px;
 }
-.company-in .company-cont .modal-btn-next {
+
+.company-in .company-cont .modal-btn-next ,.company-in .company-cont .btn-next{
   width: 160px;
   height: 48px;
   background: #1bbc9c;
@@ -656,7 +657,7 @@
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 60px;
   cursor: pointer;
 }
@@ -1101,4 +1102,33 @@
 .first-out-part .first-part-btn img {
   width: 14px;
   margin-right: 4px;
+}
+.upload-img__box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 94px;
+  margin-left: 10px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  position: relative;
+}
+.upload-img__box:hover span.work-img-mask{
+  display: block;
+}
+.upload-img__box span.work-img-mask{
+  position: absolute;
+  display: none;
+  text-align: center;
+  line-height: 94px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 11;
+}
+.upload-img__box span.work-img-mask img{
+  width: 32px;
 }
