@@ -56,7 +56,7 @@
                                 <img class="upload-show" src="/images/user.jpg" />
                                 <div id="demo2">
                                 </div>
-                                <p>（支持.jpg/.png 格式，建议尺寸100*100px，不能超过200kb)</p>
+                                <p>（支持.jpg/.png 格式，建议尺寸90*90px，不能超过200kb)</p>
                             </div>
 
                         </div>
@@ -484,7 +484,24 @@
                             justifyContent: 'center', 
                             border: '1px solid #eee'
                         })
-                        $('#demo2').empty().append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="max-width: 90px;">')
+
+                        var style = null; //定义存储图片样式变量
+                        //获取图片真实宽高
+                        var img = new Image();
+                        img.src = result;
+                        $(img).css('object-fit','contain')
+                        img.onload = function(){
+                           var imgWidth = img.width,
+                               imgHeight = img.height;
+                            if(imgWidth > imgHeight){
+                                $(img).css('max-width','90px')
+                            }else{
+                                $(img).css('max-height','90px')
+                            }
+                            $('#demo2').empty().append(img)
+                        }
+
+                        // $('#demo2').empty().append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="max-width: 90px;">')
 
                     });
                 }
