@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div style="display:flex; justify-content: center;">
-                    <div class="modal-btn-next" data-step="1">
+                    <div class="modal-btn-next btn-one" data-step="1">
                         下一步
                     </div>
                 </div>
@@ -98,14 +98,14 @@
                     <div class="layui-form-item ">
                         <label class="layui-form-label">详细地址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请填写"
+                            <input type="text" autocomplete="off" placeholder="请填写"
                                 class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">公司网址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请填写"
+                            <input type="text" autocomplete="off" placeholder="请填写"
                                 class="layui-input">
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                         <div class="modal-btn-next" data-step="0"
                             style="margin-right: 10px;background-color: #fff;border: 1px solid #ccc; color: #333;">上一步
                         </div>
-                        <div class="modal-btn-next" data-step="2">下一步</div>
+                        <div class="btn-next" data-step="2"  lay-filter="demo1" lay-submit="">下一步</div>
                     </div>
                 </form>
 
@@ -336,7 +336,8 @@
             var form = layui.form;
             var upload = layui.upload;
             var layarea = layui.layarea;
-            var pass = true
+            var pass = true;
+            var upOrDown = 'up'
             var currType = 0; //0当前为甲方 1为乙方
             //下一步按钮点击
             // $('body').undelegate('.modal-btn-next','click').delegate('.modal-btn-next','click',function(){
@@ -363,11 +364,14 @@
             //表单验证
             form.on('submit(demo1)', function (data) {
                 pass = false;
-                return false;
+                doShowContanier(2)
+                setSteps(2)
+                // return false;
             });
 
 
             $('.modal-btn-next').on('click', function () {
+                upOrDown = $(this).text().trim() == '上一步'?'up':'down'
                 let step = $(this).data('step')
                 if (step !== 'last') {
                     doShowContanier(step)
@@ -377,6 +381,14 @@
 
             //控制显示隐藏当前第几部
             function doShowContanier(step) {
+                if(step === 1){
+                    $('form','.company-step-two').each(function(){
+                        $(this).css('display','none')
+                        if($(this).data('type') == currType){
+                            $(this).css('display','block')
+                        }
+                    })
+                }
                 $('.company-step').each(function () {
                     let idx = $(this).data('step')
                     $(this).addClass('is-none')
@@ -389,6 +401,11 @@
             //控制顶上步骤条
             function setSteps(step) {
                 $('.step', '.steps').each(function () {
+                    $(this).removeClass('step-active')
+                    if(upOrDown == 'up'){
+                        $(this).removeClass('has-active')
+                    }
+                    
                     let idx = $(this).data('step');
                     step = step === 'last' ? 3 : step
                     step === idx && $(this).addClass('has-active')
@@ -474,6 +491,7 @@
             //选择品牌
             $('.modal-box', '.company-cont').on('click', function () {
                 $(this).addClass('modal-box-active').siblings().removeClass('modal-box-active')
+                currType = $(this).data('type')
             })
             form.render('select')
 
