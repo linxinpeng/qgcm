@@ -1132,3 +1132,17 @@
 .upload-img__box span.work-img-mask img{
   width: 32px;
 }
+
+.example{
+  display: flex;
+  align-items: flex-end;
+  margin-left: 30px;
+  font-size: 14px;
+  color: #999999;
+}
+.example .example-wrap{
+  height: 94px;
+}
+.example .example-wrap img{
+  height: 100%;
+}
