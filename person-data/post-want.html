@@ -11,7 +11,7 @@
                     <div class="layui-input-block">
                         <div style="display:flex;align-items: center;">
                             <div style="width: 400px;">
-                                <select name="quiz1" lay-verify="required">
+                                <select name="quiz1" lay-verify="required" lay-verType="tips">
                                     <option value="">请选择省</option>
                                     <option value="浙江" selected="">浙江省</option>
                                     <option value="你的工号">江西省</option>
@@ -34,8 +34,8 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label required">结算方式</label>
-                    <div class="layui-input-block w400">
-                        <select name="quiz1" lay-verify="required">
+                    <div class="layui-input-block"  style="width: 400px;">
+                        <select name="quiz1" lay-verify="required" lay-verType="tips">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label required">付款方式</label>
-                    <div class="layui-input-block w400">
-                        <select name="quiz1" lay-verify="required">
+                    <div class="layui-input-block"  style="width: 400px;">
+                        <select name="quiz1" lay-verify="required" lay-verType="tips">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -56,8 +56,8 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">所属行业</label>
-                    <div class="layui-input-block w400">
-                        <select name="quiz1" lay-verify="required">
+                    <div class="layui-input-block" style="width: 400px;">
+                        <select name="quiz1" lay-verify="required" lay-verType="tips">
                             <option value="">请选择省</option>
                             <option value="浙江" selected="">浙江省</option>
                             <option value="你的工号">江西省</option>
@@ -92,15 +92,14 @@
                     <label class="layui-form-label">相关照片</label>
                     <div class="layui-input-block">
                         <div style="display: flex;align-items: center;">
-                            <div class="layui-upload-drag" id="test10">
-                                <i class="layui-icon"></i>
-                                <p>上传照片</p>
+                            <div class="layui-upload-drag" id="aboutPhoto">
+                                <img src="/images/add.png" />
                                 <div class="layui-hide" id="uploadDemoView">
                                     <hr>
                                     <img src="" alt="上传成功后渲染" style="max-width: 196px">
                                 </div>
                             </div>
-                            <div id="demo2" style="display:flex;align-items: center;"></div>
+                            <div id="aboutPhotoBox" style="display: flex;align-items: center;"></div>
                         </div>
                         <p class="upload-desc">（支持.jpg/.png 格式，最多3张，图中不能带有联系方式,不能超过200kb)</p>
                     </div>
@@ -213,15 +212,37 @@
             $('.post-btn-save').off('click').on('click',function(){
                 //dosome
             })
+            
+            //删除图片
+            $('#aboutPhotoBox').undelegate('.work-img-mask', 'click').delegate('.work-img-mask', 'click', function () {
+                let targetDom = $(this).parent('.upload-img__box');
+                layer.confirm('是否删除工作证明？', {
+                    title: '提示',
+                    btn: ['确定', '取消'] //按钮
+                }, function (index) {
+                    targetDom.remove();
+                    layer.close(index)
+                }, function () {
+                    //cancel
+                });
+            })
+
             //多图片上传
             upload.render({
-                elem: '#test10'
+                elem: '#aboutPhoto'
                 , url: 'https://httpbin.org/post' //改成您自己的上传接口
                 , multiple: true
                 , before: function (obj) {
                     //预读本地文件示例，不支持ie8
                     obj.preview(function (index, file, result) {
-                        $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+                        let html = `
+                            <div class="upload-img__box">
+                                <span class="work-img-mask">
+                                    <img src="/images/delete.png" />    
+                                </span>
+                                <img src="${result}" alt="${file.name}" class="layui-upload-img" style="max-width:100%;" />
+                            </div>`
+                        $('#aboutPhotoBox').append(html)
                     });
                 }
                 , done: function (res) {

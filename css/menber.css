@@ -3,6 +3,7 @@
   padding-top: 200px;
   background-image: url('/images/vip-banner.png');
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .menber-cont__introduce {
   display: flex;
@@ -327,4 +328,9 @@
   font-size: 40px;
   color: #ecf2f9;
   z-index: -1;
+}
+
+.menber-cont__introduce-item #__last-version{
+  background: rgb(160, 207, 255)
+
 }

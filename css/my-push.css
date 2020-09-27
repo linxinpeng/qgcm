@@ -25,9 +25,27 @@
   font-size: 14px;
   color: #333333;
   line-height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 600px;
+  text-overflow: ellipsis;
+  cursor: pointer;
 }
 .push-box__item-btns {
   width: 230px;
   display: flex;
   justify-content: space-between;
+}
+.push-box__item-btns button{
+  width: 65px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 4px;
+}
+.push-box__item-btns .update-cont{
+  background: #3BB79C;
+  border: none;
 }

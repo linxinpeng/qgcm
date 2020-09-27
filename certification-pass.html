@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青瓜平台</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/js/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/other.css">
+</head>
+
+<body>
+    <!-- 页面头部元素 -->
+    <div id="page-header"></div>
+    <!-- 页面容器元素 -->
+    <div class="page-cont2">
+        <div class="page-cont__company">
+            <h3 class="green-title">公司信息</h3>
+            <div class="form-item">
+                <label>公司简介</label>
+                <span>厦门玉米有限公司</span>
+            </div>
+            <div class="form-item">
+                <label>公司全称</label>
+                <span>厦门玉米科技有限公司</span>
+            </div>
+            <div class="form-item">
+                <label>成立时间</label>
+                <span>2020-05-20</span>
+            </div>
+            <div class="form-item">
+                <label>公司规模</label>
+                <span>10000人</span>
+            </div>
+            <div class="form-item">
+                <label>公司分类</label>
+                <span>互联网</span>
+            </div>
+            <div class="form-item">
+                <label>公司所在地</label>
+                <span>软件园三七B13</span>
+            </div>
+            <div class="form-item">
+                <label>详细地址</label>
+                <span>湖滨路8号</span>
+            </div>
+            <div class="form-item">
+                <label>公司网站</label>
+                <span>www.yumi.com</span>
+            </div>
+            <div class="form-item">
+                <label>公司介绍</label>
+                <span>为了提高合作对接的效率，请尽可能详细描述您的需求，包括但不限于项目背景、当前问题、其他个性化需求等。500字以内</span>
+            </div>
+            <div class="form-item" style="margin-top: 30px;">
+                <label>品牌LOGO</label>
+                <span class="logo">
+                    <img src="/images/user.jpg" />
+                </span>
+            </div>
+        </div>
+         <div class="page-cont__personal">
+            <h3 class="green-title">联系信息</h3>
+            <div class="form-item">
+                <label>姓名</label>
+                <span>林先</span>
+            </div>
+            <div class="form-item">
+                <label>所在部门</label>
+                <span>UI设计部</span>
+            </div>
+            <div class="form-item">
+                <label>职位</label>
+                <span>UI设计师</span>
+            </div>
+            <div class="form-item">
+                <label>手机号码</label>
+                <span>1866666666</span>
+            </div>
+            <div class="form-item">
+                <label>联系方式</label>
+                <div class="form-item__contact">
+                    <div class="wx">
+                        <img src="/images/wechat.png" />
+                        <span>2558558788</span>
+                    </div>
+                    <div class="qq">
+                        <img src="/images/qq.png" />
+                        <span>554085340</span>
+                    </div>
+                    <div class="email">
+                        <img src="/images/email.png" />
+                        <span>55408340@qq.com</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="page-cont__update">
+            <button>修改</button>
+        </div>
+    </div>
+    <!-- 页面底部 -->
+    <div id="page-footer"></div>
+    <script src="/js/lib/jquery.min.js"></script>
+    <script src="/js/lib/layui/layui.js"></script>
+    <script>
+        $(function () {
+            layui.use(['element', 'upload'], function () {
+                var element = layui.element;
+                var upload = layui.upload;
+              
+                //加载头部
+                $('#page-header').load('/layout/header.html')
+                //加载底部
+                $('#page-footer').load('/layout/footer.html')
+            })
+        })
+    </script>
+</body>
+
+</html>

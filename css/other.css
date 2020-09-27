@@ -1146,3 +1146,77 @@
 .example .example-wrap img{
   height: 100%;
 }
+.page-cont2{
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
+  border: 1px solid #F3F3F3;
+  padding: 60px 45px;
+  margin-top: 80px;
+}
+.page-cont__company{
+  margin-bottom: 64px;
+}
+.green-title{
+  font-size: 16px;
+  font-weight: 500;
+  color: #3BB79C;
+}
+.green-title::before{
+  display: inline-block;
+  margin-right: 10px;
+  content: "";
+  width: 3px;
+  height: 14px;
+  background: #3BB79C;
+  border-radius: 2px;
+}
+.form-item{
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.form-item label{
+  font-size: 14px;
+  font-weight: 500;
+  color: #999999;
+  display: inline-block;
+  width: 108px;
+}
+.form-item span{
+  color: #333333;
+}
+.form-item .logo{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.form-item .logo img{
+  width: 100%;
+}
+.page-cont__update{
+  margin-top: 20px;
+  text-align: center;
+}
+.page-cont__update button{
+  width: 160px;
+  height: 48px;
+  background: #1BBC9C;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-item__contact{
+  display: flex;
+  align-items: center;
+}
+.form-item__contact div{
+  margin-right: 20px;
+}
+.form-item__contact img{
+  height: 14px;
+  margin-right: 6px;
+}

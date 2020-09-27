@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div style="display:flex; justify-content: center;">
-                    <div class="modal-btn-next" data-step="1">
+                    <div class="modal-btn-next btn-one" data-step="1">
                         下一步
                     </div>
                 </div>
@@ -98,14 +98,14 @@
                     <div class="layui-form-item ">
                         <label class="layui-form-label">详细地址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请填写"
+                            <input type="text" autocomplete="off" placeholder="请填写"
                                 class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">公司网址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请填写"
+                            <input type="text" autocomplete="off" placeholder="请填写"
                                 class="layui-input">
                         </div>
                     </div>
@@ -201,14 +201,14 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">详细地址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入"
+                            <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off" placeholder="请输入"
                                 class="layui-input">
                         </div>
                     </div>
                     <div class="layui-form-item">
                         <label class="layui-form-label">公司网址</label>
                         <div class="layui-input-block" style="width: 550px;">
-                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入"
+                            <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off" placeholder="请输入"
                                 class="layui-input">
                         </div>
                     </div>
@@ -239,53 +239,51 @@
                         <div class="modal-btn-next" data-step="0"
                             style="margin-right: 10px;background-color: #fff;border: 1px solid #ccc; color: #333;">上一步
                         </div>
-                        <div class="modal-btn-next" data-step="2">下一步</div>
+                        <div class="btn-next" data-step="2"  lay-filter="demo1" lay-submit="">下一步</div>
                     </div>
                 </form>
 
             </div>
             <div class="company-step-three company-step is-none" data-step="3">
                 <div class="contact">
-                    <div class="join-company" style="margin-bottom: 64px;" data-type="0">
+                    <div class="join-company" data-type="0">
                         <h3 class="green-bor-title" style="margin-bottom: 20px;">加入公司</h3>
+                    </div>
+                    <div class="contact-info">
                         <form class="layui-form" action="">
-                            <div class="layui-form-item w550">
+                            <div class="layui-form-item w550" style="margin-bottom: 64px;">
                                 <label class="layui-form-label required">公司简称</label>
                                 <div class="layui-input-block">
-                                    <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    <input type="text" lay-verify="required"  lay-verType="tips" autocomplete="off"
                                         placeholder="请输入" class="layui-input">
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="contact-info">
-                        <h3 class="green-bor-title" style="margin-bottom: 20px;">联系信息</h3>
-                        <form class="layui-form" action="">
+                            <h3 class="green-bor-title" style="margin-bottom: 20px;">联系信息</h3>
                             <div class="layui-form-item ">
                                 <label class="layui-form-label required">姓名</label>
                                 <div class="layui-input-block w175">
-                                    <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                         placeholder="请输入" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item  ">
                                 <label class="layui-form-label required">所在部门</label>
                                 <div class="layui-input-block w175">
-                                    <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                         placeholder="请输入" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item  ">
                                 <label class="layui-form-label required">职位</label>
                                 <div class="layui-input-block w175">
-                                    <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                         placeholder="请输入" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-form-item  ">
                                 <label class="layui-form-label required">手机号码</label>
                                 <div class="layui-input-block w175">
-                                    <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                    <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                         placeholder="请输入" class="layui-input">
                                 </div>
                             </div>
@@ -296,30 +294,36 @@
 
                                         <div class="lxfs-item">
                                             <img src="/images/wechat.png" />
-                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                                 placeholder="微信" class="layui-input">
                                         </div>
                                         <div class="lxfs-item">
                                             <img src="/images/qq.png" />
-                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                                 placeholder="QQ"" class=" layui-input">
                                         </div>
                                         <div class="lxfs-item">
                                             <img src="/images/email.png" />
-                                            <input type="text" name="title" lay-verify="title" autocomplete="off"
+                                            <input type="text" lay-verify="required"  lay-verType="tips"  autocomplete="off"
                                                 placeholder="电子邮箱" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div style="display:flex; justify-content: center;">
+                                <div class="modal-btn-next" data-step="1"
+                                    style="margin-right: 10px;background-color: #fff;border: 1px solid #ccc; color: #333;">上一步
+                                </div>
+                                <div class="btn-next" data-step="last"  lay-filter="last" lay-submit="">确认提交</div>
+                            </div>
                         </form>
                     </div>
-                    <div style="display:flex; justify-content: center;">
+                    <!-- <div style="display:flex; justify-content: center;">
                         <div class="modal-btn-next" data-step="1"
                             style="margin-right: 10px;background-color: #fff;border: 1px solid #ccc; color: #333;">上一步
                         </div>
                         <div class="modal-btn-next" data-step="last">确认提交</div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -336,7 +340,8 @@
             var form = layui.form;
             var upload = layui.upload;
             var layarea = layui.layarea;
-            var pass = true
+            var pass = true;
+            var upOrDown = 'up'
             var currType = 0; //0当前为甲方 1为乙方
             //下一步按钮点击
             // $('body').undelegate('.modal-btn-next','click').delegate('.modal-btn-next','click',function(){
@@ -359,15 +364,23 @@
                 }
             })
 
+             //表单验证
+             form.on('submit(last)', function (data) {
+                pass = false;
+                // return false;
+            });
 
             //表单验证
             form.on('submit(demo1)', function (data) {
                 pass = false;
-                return false;
+                doShowContanier(2)
+                setSteps(2)
+                // return false;
             });
 
 
             $('.modal-btn-next').on('click', function () {
+                upOrDown = $(this).text().trim() == '上一步'?'up':'down'
                 let step = $(this).data('step')
                 if (step !== 'last') {
                     doShowContanier(step)
@@ -377,6 +390,14 @@
 
             //控制显示隐藏当前第几部
             function doShowContanier(step) {
+                if(step === 1){
+                    $('form','.company-step-two').each(function(){
+                        $(this).css('display','none')
+                        if($(this).data('type') == currType){
+                            $(this).css('display','block')
+                        }
+                    })
+                }
                 $('.company-step').each(function () {
                     let idx = $(this).data('step')
                     $(this).addClass('is-none')
@@ -389,6 +410,11 @@
             //控制顶上步骤条
             function setSteps(step) {
                 $('.step', '.steps').each(function () {
+                    $(this).removeClass('step-active')
+                    if(upOrDown == 'up'){
+                        $(this).removeClass('has-active')
+                    }
+                    
                     let idx = $(this).data('step');
                     step = step === 'last' ? 3 : step
                     step === idx && $(this).addClass('has-active')
@@ -474,6 +500,7 @@
             //选择品牌
             $('.modal-box', '.company-cont').on('click', function () {
                 $(this).addClass('modal-box-active').siblings().removeClass('modal-box-active')
+                currType = $(this).data('type')
             })
             form.render('select')
 
