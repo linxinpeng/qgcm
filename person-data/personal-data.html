@@ -563,6 +563,10 @@
             previewImg(imageTarget[0])
         })
 
+        $('.example-wrap img').off('click').on('click',function(){
+            previewImg(this)
+        })
+
         function previewImg(obj) {
             var img = new Image();
             img.src = obj.src;

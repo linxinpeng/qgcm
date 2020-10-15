@@ -929,6 +929,31 @@
             </div>
         </div>
     </div>
+
+
+    <div class="fixed-release">
+        前往发布
+    </div>
+
+    <style>
+        .fixed-release{
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            padding: 10px 30px;
+            z-index: 99;
+            cursor: pointer;
+            background-color: #21CAA8;
+            color: #fff;
+            border-radius: 3px;
+            box-shadow: 1px 1px 6px #21CAA8;
+            transition: all .3s ease;
+        }
+        .fixed-release:hover{
+            transform: translateY(-4px);
+        }
+    </style>
+
     <!-- 页面底部 -->
     <div id="page-footer"></div>
     <script src="/js/lib/jquery.min.js"></script>
@@ -937,6 +962,11 @@
     <script src="/js/search-list.js"></script>
     <script>
         $(function () {
+
+            $('.fixed-release').on('click',function(){
+                location.href = "./personal-data.html?post-want"
+            })
+
             layui.use(['laypage', 'layer', 'form'], function () {
                 var laypage = layui.laypage
                     , layer = layui.layer,
